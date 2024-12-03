@@ -13,6 +13,7 @@
 | Part | Description |
 | --- | --- |
 | Features | • Login<br>• Create<br>• Read<br>• Update<br>• Delete<br>• Validation<br>• Pagination<br>• Search<br>• Charts<br>• Access Rights<br>• ETC |
+| Libraries | Highchartjs |
 | Framework | • Laravel 8<br>• Bootstrap 5 |
 | Tools | • Visual Studio Code<br>• Xampp<br>• Git |
 

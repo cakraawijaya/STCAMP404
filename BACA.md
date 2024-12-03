@@ -13,6 +13,7 @@
 | Bagian | Deskripsi |
 | --- | --- |
 | Fitur | • Masuk<br>• Buat<br>• Baca<br>• Ubah<br>• Hapus<br>• Validasi<br>• Paginasi<br>• Pencarian<br>• Grafik<br>• Hak akses<br>• DLL |
+| Pustaka | Highchartjs |
 | Kerangka Kerja | • Laravel 8<br>• Bootstrap 5 |
 | Peralatan | • Visual Studio Code<br>• Xampp<br>• Git |
 
