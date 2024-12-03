@@ -12,9 +12,9 @@
 ## Project Requirements
 | Part | Description |
 | --- | --- |
-| Features | Login, Create, Read, Update, Delete, Validation, Pagination, Search, Charts, Access Rights by Session/Middleware, ETC |
-| Framework | Laravel 8, Bootstrap 5 |
-| Tools | Visual Studio Code, XAMPP (PHP Version 7.4), Git |
+| Features | • Login<br>• Create<br>• Read<br>• Update<br>• Delete<br>• Validation<br>• Pagination<br>• Search<br>• Charts<br>• Access Rights<br>• ETC |
+| Framework | • Laravel 8<br>• Bootstrap 5 |
+| Tools | • Visual Studio Code<br>• Xampp<br>• Git |
 
 <br><br>
 

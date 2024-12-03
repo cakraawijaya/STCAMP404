@@ -12,9 +12,9 @@
 ## Kebutuhan Proyek
 | Bagian | Deskripsi |
 | --- | --- |
-| Fitur | Masuk, Buat, Baca, Ubah, Hapus, Paginasi, Pencarian, Validasi, Hak akses dengan sesi, Grafik, DLL |
-| Kerangka Kerja | Laravel 8, Bootstrap 5 |
-| Peralatan | Visual Studio Code, XAMPP (PHP Versi 7.4), Git |
+| Fitur | • Masuk<br>• Buat<br>• Baca<br>• Ubah<br>• Hapus<br>• Validasi<br>• Paginasi<br>• Pencarian<br>• Grafik<br>• Hak akses<br>• DLL |
+| Kerangka Kerja | • Laravel 8<br>• Bootstrap 5 |
+| Peralatan | • Visual Studio Code<br>• Xampp<br>• Git |
 
 <br><br>
 
