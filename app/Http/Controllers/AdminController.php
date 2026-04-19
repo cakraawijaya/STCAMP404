@@ -61,13 +61,13 @@ class AdminController extends Controller
                         'nama_siswa' => $reqdata->nama_siswa,
                         'pelatihan' => $reqdata->pelatihan
                     ]);
-                    $msg = ' Selamat anda berhasil menambahkan data siswa!!';
+                    $msg = ' Selamat anda berhasil menambahkan data siswa !!';
                     return redirect()->route('data-pelatihan')->with('addAdminNotif', $msg);
                 }
-                $msg = ' Selamat anda berhasil menambahkan data siswa!!';
+                $msg = ' Selamat anda berhasil menambahkan data siswa !!';
                 return redirect()->route('data-pelatihan')->with('addAdminNotif', $msg);
             } else {
-                $msg = 'Data pelatihan anda sudah ada, harap selesaikan terlebih dahulu!!';
+                $msg = 'Data pelatihan sudah ada !!';
                 return redirect()->route('data-pelatihan')->with('errorCreateAdminNotif', $msg);
             }
         }
@@ -83,13 +83,13 @@ class AdminController extends Controller
             if ($DB_SearchNama == $DB_NULLnama) {
                 $findID = $this->db->find($id);
                 $findID->update($reqdata->all());
-                $msg = ' Selamat anda berhasil mengubah data siswa!!';
+                $msg = ' Selamat anda berhasil mengubah data siswa !!';
                 return redirect()->route('data-pelatihan')->with('updateAdminNotif', $msg);
             }
-            $msg = 'Data pelatihan anda sudah ada, harap selesaikan terlebih dahulu!!';
+            $msg = 'Data pelatihan anda sudah ada !!';
             return redirect()->route('data-pelatihan')->with('errorUpdateAdminNotif', $msg);
         } else {
-            $msg = 'Data pelatihan anda sudah ada, harap selesaikan terlebih dahulu!!';
+            $msg = 'Data pelatihan anda sudah ada !!';
             return redirect()->route('data-pelatihan')->with('errorUpdateAdminNotif', $msg);
         }
     }
@@ -99,7 +99,7 @@ class AdminController extends Controller
         $findID = $this->db->find($id);
         $findID->delete();
         $this->db->reset();
-        $msg = ' Selamat anda berhasil menghapus data siswa!!';
+        $msg = ' Selamat anda berhasil menghapus data siswa !!';
         return redirect()->route('data-pelatihan')->with('deleteAdminNotif', $msg);
     }
 }

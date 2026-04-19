@@ -61,7 +61,7 @@ class GeneralController extends Controller
                 $reqData->session()->put('LogSession', $user->id);
                 $reqData->session()->put('adminAccess', $user->id);
                 $reqData->session()->put('siswaAccess', $user->id);
-                $msg = " Anda berhasil masuk, selamat datang di menu utama STCAMP404!!";
+                $msg = " Anda berhasil masuk, selamat datang di menu utama STCAMP404 !!";
                 return redirect()->route('dashboardaccount')->with('LoginNotif', $msg);
             } else{
                 return redirect()->route('index')->with('loginError', 'Data tidak ditemukan, silakan registrasi terlebih dahulu.');
@@ -123,14 +123,14 @@ class GeneralController extends Controller
 
         $UpData->update($dataUpdate);
 
-        $msg = 'Selamat anda berhasil mengubah data profil!!';
+        $msg = 'Selamat anda berhasil mengubah data profil !!';
         return redirect()->route('dashboardaccount')->with('updateProfileNotif', $msg);
     }
 
     public function logout(){
         if (Session::has('LogSession')) {
             Session::pull('LogSession');
-            $msg = " Anda telah berhasil keluar dari segala bentuk aktivitas!!";
+            $msg = " Anda telah berhasil keluar dari segala bentuk aktivitas !!";
             return redirect()->route('index')->with('LogoutNotif', $msg);   
         }
     }
@@ -147,7 +147,7 @@ class GeneralController extends Controller
                 'image' => $reqData->image
             ]);
 
-            $msg = ' Selamat anda berhasil melakukan registrasi!!';
+            $msg = ' Selamat anda berhasil melakukan registrasi !!';
             return redirect()->route('registrasi')->with('registerNotif', $msg);
         }
     }
@@ -171,7 +171,7 @@ class GeneralController extends Controller
             ]);
             return redirect()->route('resetUser')->with('email', $reqData->email);
         } else {
-            $msg = ' Email yang anda masukkan salah atau belum terdaftar!!';
+            $msg = ' Email yang anda masukkan salah atau belum terdaftar !!';
             return redirect()->route('forgetUser')->with('forgetFailNotif', $msg);
         }
     }
@@ -192,14 +192,14 @@ class GeneralController extends Controller
     public function resetProcess(Request $reqData)
     {
         if ($reqData->password !== $reqData->password_confirmation) {
-            $msg = 'Password tidak sama !';
+            $msg = 'Password tidak sama !!';
             return redirect()->route('resetUser')->with('resetFailNotif', $msg)->with('email', $reqData->email);
         }
 
         $validated = $this->db->where('email', '=', $reqData->email)->first();
 
         if (!$validated) {
-            $msg = ' Anda gagal melakukan reset password, harap coba lagi!!';
+            $msg = ' Anda gagal melakukan reset password, harap coba lagi !!';
             return redirect()->route('resetUser')->with('resetFailNotif', $msg);
         } else {
             $validated->update([
@@ -207,7 +207,7 @@ class GeneralController extends Controller
             ]);
             $tempresetPassword = $this->rs->select('email')->where('email', '=', $reqData->email);
             $tempresetPassword->delete();
-            $msg = ' Selamat anda berhasil melakukan reset password!!';
+            $msg = ' Selamat anda berhasil melakukan reset password !!';
             return redirect()->route('index')->with('ResetPassNotif', $msg);
         }        
     }

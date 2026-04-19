@@ -48,10 +48,10 @@ class SiswaController extends Controller
                     'nama_siswa' => $LogUser->name,
                     'pelatihan' => $reqData->pelatihan
                 ]);
-                $msg = 'Anda berhasil menambahkan data pelatihan!!';
+                $msg = 'Anda berhasil menambahkan data pelatihan !!';
                 return redirect()->route('data-siswa')->with('addSiswaNotif', $msg);
             } else {
-                $msg = 'Data pelatihan anda sudah ada, harap selesaikan terlebih dahulu!!';
+                $msg = 'Data pelatihan anda sudah ada, harap selesaikan terlebih dahulu !!';
                 return redirect()->route('data-siswa')->with('erroraddSiswaNotif', $msg);
             }
         }
