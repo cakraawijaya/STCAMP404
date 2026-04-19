@@ -101,24 +101,29 @@ class GeneralController extends Controller
     public function updprofile(Request $reqdata)
     {
         $UpData = $this->db->where('id', '=', Session::get('LogSession'))->first();
-        if($reqdata->hasFile('image')){
-            $UpData->update([
-                'siswa_id' => $reqdata->siswa_id,
-                'name' => $reqdata->name,
-                'email' => $reqdata->email,
-                'password' => bcrypt($reqdata->password),
-                'image' => $reqdata->file('image')->move('asset\img\profile', $reqdata->file('image')->getClientOriginalName())
-            ]);
-        } else {
-            $UpData->update([
-                'siswa_id' => $reqdata->siswa_id,
-                'name' => $reqdata->name,
-                'email' => $reqdata->email,
-                'password' => bcrypt($reqdata->password),
-                'image' => $UpData->image
-            ]);
+
+        $dataUpdate = [
+            'siswa_id' => $reqdata->siswa_id,
+            'name' => $reqdata->name,
+            'email' => $reqdata->email,
+        ];
+
+        if (!empty($reqdata->password)) {
+            $dataUpdate['password'] = bcrypt($reqdata->password);
         }
-        $msg = ' Selamat anda berhasil mengubah data profil!!';
+
+        if ($reqdata->hasFile('image')) {
+            $dataUpdate['image'] = $reqdata->file('image')->move(
+                'asset/img/profile', 
+                $reqdata->file('image')->getClientOriginalName()
+            );
+        } else {
+            $dataUpdate['image'] = $UpData->image;
+        }
+
+        $UpData->update($dataUpdate);
+
+        $msg = 'Selamat anda berhasil mengubah data profil!!';
         return redirect()->route('dashboardaccount')->with('updateProfileNotif', $msg);
     }
 

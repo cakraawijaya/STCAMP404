@@ -231,7 +231,7 @@
                                     <button onclick="ShowPassProfile()" class="btn btn-outline-secondary mt-2" type="button">
                                         <i class="bi bi-eye-fill"></i>
                                     </button>
-                                    <input type="password" class="form-control mt-2" name="password" id="prfpassword" placeholder="Ubah kata sandi anda..." required>
+                                    <input type="password" class="form-control mt-2" name="password" id="prfpassword" placeholder="Ubah kata sandi anda...">
                                 </div>
                             </div>
                         </div>
