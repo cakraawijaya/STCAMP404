@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</h1><hr><br>
+    <h2><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</h2><hr><br>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">

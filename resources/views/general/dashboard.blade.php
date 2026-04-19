@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1><i class="bi bi-person-rolodex me-1"></i> Dashboard</h1><hr>
+    <h2><i class="bi bi-person-rolodex me-1"></i> Dashboard</h2><hr>
     <!-- Session Alert Login -->
     @if ($msgLogin = Session::get('LoginNotif'))
         <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">

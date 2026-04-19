@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</h1><hr><br>
+    <h2><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</h2><hr><br>
     <div class="table-title">
         <div class="row">
             <div class="col"><caption> Data Pelatihan Anda :</caption></div>

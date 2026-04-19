@@ -1,5 +1,5 @@
 /* Navbar */
-.mainnavcolor{
+.mainnavcolor, .bg-card-title {
     background-color: skyblue;
 }
 
@@ -11,6 +11,12 @@
 .modal-footer {
     margin: 0;
     border-top: none;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
 input::placeholder, .lupas, .login {
@@ -55,7 +61,7 @@ input::placeholder, .lupas, .login {
 }
 
 .card-img-top{
-    height: 320px;
+    height: 190px;
     width: auto;
 }
 

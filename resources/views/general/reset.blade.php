@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1><i class="bi bi-universal-access"></i> Reset Password</h1><hr>
+    <h2><i class="bi bi-universal-access"></i> Reset Password</h2><hr>
     
     @if($data)
         <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
@@ -57,7 +57,7 @@
             </div>
             <div class="col-xl-12 mt-4">
                 <div class="input-sm">
-                    <button type="submit" class="btn btn-outline-success btn-md btnreg col-xl-6 p-3"><i class="bi bi-pencil-fill me-1"></i> Reset Password</button>
+                    <button type="submit" class="btn btn-primary btn-md btnreg p-2"><i class="bi bi-pencil-fill me-1"></i> Reset Password</button>
                 </div>
             </div>
         </form>

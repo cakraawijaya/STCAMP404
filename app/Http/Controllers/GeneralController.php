@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\DBU as DBU;
 use App\Models\DBS as DBS;
 use App\Models\DBRS as RS;
-use App\Http\Requests\REQSTCAMP;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -136,21 +135,38 @@ class GeneralController extends Controller
         }
     }
 
-    public function regUser(REQSTCAMP $reqData)
-    {   
-        $validated = $reqData->validated();
-        if($validated){
-            $this->db->create([
-                'siswa_id' => $reqData->siswa_id,
-                'name' => $reqData->name,
-                'email' => $reqData->email,
-                'password' => bcrypt($reqData->password),
-                'image' => $reqData->image
-            ]);
+    public function regUser(Request $reqData)
+    {
+        $validator = Validator::make($reqData->all(), [
+            'name' => [
+                'required',
+                'min:3',
+                function ($attribute, $value, $fail) {
+                    $exists = $this->db->whereRaw('LOWER(name) = ?', [strtolower($value)])->exists();
 
-            $msg = ' Selamat anda berhasil melakukan registrasi !!';
-            return redirect()->route('registrasi')->with('registerNotif', $msg);
+                    if ($exists) {
+                        $fail('error');
+                    }
+                },
+            ],
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+            'password_confirmation' => 'required|same:password',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('registrasi')->withErrors($validator)->withInput();
         }
+
+        $this->db->create([
+            'siswa_id' => $reqData->siswa_id,
+            'name' => $reqData->name,
+            'email' => $reqData->email,
+            'password' => bcrypt($reqData->password),
+            'image' => $reqData->image
+        ]);
+
+        return redirect()->route('registrasi')->with('registerNotif', 'Selamat anda berhasil melakukan registrasi !!');
     }
 
     public function forgetUser()

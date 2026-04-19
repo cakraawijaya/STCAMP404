@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1><i class="bi bi-patch-question"></i> Lupa Password</h1><hr>
+    <h2><i class="bi bi-patch-question"></i> Lupa Password</h2><hr>
 
     <form class="form-group row" action="{{ url('/forgetProcess') }}" method="POST">
         @csrf
@@ -20,7 +20,7 @@
         </div>
         <div class="row">
             <div class="col-md-3 mt-4 input-sm">
-                <button type="submit" class="btn btn-outline-success btn-md btnreg"><i class="bi bi-envelope-check-fill me-1"></i> Setuju & Lanjutkan</button>
+                <button type="submit" class="btn btn-primary btn-md btnreg p-2"><i class="bi bi-envelope-check-fill me-1"></i> Setuju & Lanjutkan</button>
             </div>
         </div>
     </form>

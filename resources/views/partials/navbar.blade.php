@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light mainnavcolor">
+<nav class="navbar navbar-expand-lg navbar-light mainnavcolor p-3">
   <div class="container-fluid">
     @if(Session()->has('LogSession'))
       <a class="navbar-brand nav-link fw-bold" href="{{ url('/home') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
