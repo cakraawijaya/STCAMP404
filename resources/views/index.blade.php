@@ -22,30 +22,6 @@
         </div>
     @endif    
     <!-- Akhir Session Alert: Success Reset Password -->
-
-    <!-- Session Alert: Login Failed -->
-    @if ($msgLoginFailed = Session::get('loginError'))
-        <div id="loginAlert" class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
-            <small class="text-muted">
-                <i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgLoginFailed }}
-            </small>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var alertBox = document.getElementById('loginAlert');
-
-                if (alertBox) {
-                    alertBox.addEventListener('closed.bs.alert', function () {
-                        window.location.href = "{{ route('registrasi') }}";
-                    });
-                }
-            });
-        </script>
-    @endif
-    <!-- Akhir Session Alert: Login Failed -->
     <br>
 
 

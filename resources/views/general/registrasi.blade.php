@@ -22,25 +22,13 @@
         <div class="col-xl-12">
             <div class="col-md-6 mt-4 input-sm">
                 <label for="name"><i class="bi bi-envelope me-1"></i> Nama</label>
-                <input id="name" type="text" class="form-control mt-3 @error('rname') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Masukan nama lengkap anda...">
-                @error('rname')
-                    <span class="text-danger invalid-feedback" role="alert">
-                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                        <strong> Kesalahan penulisan nama !</strong>
-                    </span>
-                @enderror
+                <input id="name" type="text" class="form-control mt-3" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Masukan nama lengkap anda...">
             </div>
         </div>
         <div class="col-xl-12">
             <div class="col-md-6 mt-4 input-sm">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
-                <input id="email" type="email" class="form-control mt-3 @error('remail') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Masukan email anda...">
-                @error('remail')
-                    <span class="text-danger invalid-feedback" role="alert">
-                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                        <strong> Kesalahan penulisan email !</strong>
-                    </span>
-                @enderror
+                <input id="email" type="email" class="form-control mt-3" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Masukan email anda...">
             </div>
         </div>
         <div class="row">
@@ -50,13 +38,7 @@
                     <button onclick="ShowPassRegister()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
                     </button>
-                    <input id="rpassword" type="password" class="form-control @error('rpassword') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Masukan kata sandi anda...">
-                    @error('rpassword')
-                        <span class="text-danger invalid-feedback" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                            <strong> Password salah: gagal konfirmasi!</strong>
-                        </span>
-                    @enderror
+                    <input id="rpassword" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="Masukan kata sandi anda...">
                 </div>
                 <div class="col-md-12 mt-2">
                   <a href="#" class="login" data-bs-toggle="modal" data-bs-target="#ModalLogin">
@@ -70,7 +52,7 @@
                     <button onclick="ShowPassConfirmRegister()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
                     </button>
-                    <input id="rpassword-confirm" type="password" class="form-control @error('rpassword') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" placeholder="Konfirmasi kata sandi anda...">
+                    <input id="rpassword-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Konfirmasi kata sandi anda...">
                 </div>
             </div>
         </div>

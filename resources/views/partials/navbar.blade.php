@@ -45,12 +45,13 @@
           @csrf
           <div class="col-md-12">
             <label for="email" class="col-form-label text-md-end"><i class="bi bi-envelope me-1"></i> Email</label>
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" 
-            name="email" value="{{ old('email') }}" placeholder="Masukan email anda..." required autocomplete="email" autofocus>
-            @error('email')
-              <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <input type="email" id="email_login" name="email" 
+            class="form-control @error('email_login') is-invalid @enderror" value="{{ old('email') }}" 
+            placeholder="Masukan email anda..." required autocomplete="email" autofocus>
+            @error('email_login')
               <span class="text-danger invalid-feedback" role="alert">
-                <strong> Kesalahan penulisan email !</strong>
+                <i class="bi bi-exclamation-triangle-fill mr-1"></i>
+                <strong> Email salah / belum terdaftar di sistem !</strong>
               </span>
             @enderror
           </div>
@@ -60,11 +61,13 @@
               <button onclick="ShowPassLogin()" class="btn btn-outline-secondary" type="button">
                 <i class="bi bi-eye-fill"></i>
               </button>
-              <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror"
+              <input type="password" id="password_login" name="password" 
+              class="form-control @error('password_login') is-invalid @enderror"
               required autocomplete="current-password" placeholder="Masukan kata sandi anda...">
-              @error('password')
+              @error('password_login')
                 <span class="text-danger invalid-feedback" role="alert">
-                  <strong class="me-2">Password salah! </strong><i class="bi bi-exclamation-triangle-fill"></i>
+                  <i class="bi bi-exclamation-triangle-fill mr-1"></i>
+                  <strong class="me-2">Password salah !</strong>
                 </span>
               @enderror
             </div>
@@ -98,7 +101,7 @@
 <!-- Show Password-->
 <script>
 function ShowPassLogin() {
-  var x = document.getElementById("password");
+  var x = document.getElementById("password_login");
   if (x.type === "password") {
     x.type = "text";
   } else {
@@ -107,3 +110,16 @@ function ShowPassLogin() {
 }
 </script>
 <!-- Akhir Show Password-->
+
+@if($errors->has('email_login') || $errors->has('password_login'))
+<script>
+    window.onload = function () {
+        var modalElement = document.getElementById('ModalLogin');
+
+        if (modalElement) {
+            var modal = new bootstrap.Modal(modalElement);
+            modal.show();
+        }
+    };
+</script>
+@endif

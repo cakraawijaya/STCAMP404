@@ -2,17 +2,6 @@
 
 @section('container')
     <h1><i class="bi bi-universal-access"></i> Reset Password</h1><hr>
-
-    <!-- Session Alert Reset Failed -->
-    @if ($msgResetFail = Session::get('resetFailNotif'))
-        <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
-            <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgResetFail }}
-            </small>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    <!-- Session Alert Reset Failed -->
     
     @if($data)
         <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
@@ -33,11 +22,17 @@
                         <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
                         </button>
-                        <input id="fpassword" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password" placeholder="Masukan kata sandi baru..." required autofocus>
-                        @error('fpassword')
+                        <input type="password" id="new_password" name="password" 
+                        class="form-control @error('password') is-invalid @enderror" 
+                        placeholder="Masukan kata sandi baru..." required autofocus>
+                        @error('password')
                             <span class="text-danger invalid-feedback" role="alert">
-                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                                <strong> Password salah: gagal konfirmasi!</strong>
+                                <i class="bi bi-exclamation-triangle-fill mr-1"></i>
+                                @if($errors->first('password') == 'error')
+                                    <strong>Gunakan password terbaru !</strong>
+                                @else
+                                    <strong>Password min.6 karakter !</strong>
+                                @endif
                             </span>
                         @enderror
                     </div>
@@ -48,7 +43,15 @@
                         <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
                         </button>
-                        <input id="fpassword-confirm" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password_confirmation" placeholder="Konfirmasi kata sandi baru..." required>
+                        <input type="password" id="new_password_confirm" name="password_confirmation" 
+                        class="form-control @error('password_confirmation') is-invalid @enderror" 
+                        placeholder="Konfirmasi kata sandi baru..." required>
+                        @error('password_confirmation')
+                            <span class="text-danger invalid-feedback" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill mr-1"></i>
+                                <strong>Konfirmasi password tidak cocok !</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@
     <!-- Show Password-->
     <script>
     function ShowPassForget() {
-        var x = document.getElementById("fpassword");
+        var x = document.getElementById("new_password");
         if (x.type === "password") {
             x.type = "text";
         } else {
@@ -72,7 +75,7 @@
     }
 
     function ShowPassConfirmForget() {
-        var x = document.getElementById("fpassword-confirm");
+        var x = document.getElementById("new_password_confirm");
         if (x.type === "password") {
             x.type = "text";
         } else {

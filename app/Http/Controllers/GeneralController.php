@@ -8,6 +8,7 @@ use App\Http\Requests\REQSTCAMP;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class GeneralController extends Controller
 {
@@ -54,21 +55,21 @@ class GeneralController extends Controller
         return view('general.registrasi', $IDS);
     }
 
-    public function login(Request $reqData){   
+    public function login(Request $reqData)
+    {   
+        $reqData->validate(['email' => 'required|email', 'password' => 'required']);
         $user = $this->db->where('email', '=', $reqData->email)->first();
-        if($user){
-            if(Hash::check($reqData->password, $user->password)){
-                $reqData->session()->put('LogSession', $user->id);
-                $reqData->session()->put('adminAccess', $user->id);
-                $reqData->session()->put('siswaAccess', $user->id);
-                $msg = " Anda berhasil masuk, selamat datang di menu utama STCAMP404 !!";
-                return redirect()->route('dashboardaccount')->with('LoginNotif', $msg);
-            } else{
-                return redirect()->route('index')->with('loginError', 'Data tidak ditemukan, silakan registrasi terlebih dahulu.');
-            }
-        } else{
-            return redirect()->route('index')->with('loginError', 'Data tidak ditemukan, silakan registrasi terlebih dahulu.');
+        if(!$user){
+            return redirect()->route('index')->withErrors(['email_login' => 'error', 'password_login' => 'error'])->withInput();
         }
+        if(!Hash::check($reqData->password, $user->password)){
+            return redirect()->route('index')->withErrors(['password_login' => 'error'])->withInput();
+        }
+        $reqData->session()->put('LogSession', $user->id);
+        $reqData->session()->put('adminAccess', $user->id);
+        $reqData->session()->put('siswaAccess', $user->id);
+        $msg = "Anda berhasil masuk, selamat datang di menu utama STCAMP404 !!";
+        return redirect()->route('dashboardaccount')->with('LoginNotif', $msg);
     }
 
     public function dashboardaccount()
@@ -159,21 +160,30 @@ class GeneralController extends Controller
 
     public function forgetProcess(Request $reqData)
     {
-        $count = $this->rs->count();
-        $email = $this->db->select('email')->where('email', '=', $reqData->email)->distinct()->get();
-        $emailNULL = $this->db->select('email')->where('email', '=', NULL)->distinct()->get();
-        if($email != $emailNULL){
-            $this->rs->create([
-                'email' => $reqData->email,
-                'token' => bcrypt($count),
-                'created_at' => $reqData->created_at,
-                'updated_at' => $reqData->updated_at
-            ]);
-            return redirect()->route('resetUser')->with('email', $reqData->email);
-        } else {
-            $msg = ' Email yang anda masukkan salah atau belum terdaftar !!';
-            return redirect()->route('forgetUser')->with('forgetFailNotif', $msg);
+        $validator = Validator::make($reqData->all(), [
+            'email' => 'required|email'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('forgetUser')->withErrors($validator)->withInput();
         }
+
+        $user = $this->db->where('email', '=', $reqData->email)->first();
+
+        if (!$user) {
+            return redirect()->route('forgetUser')->withErrors(['email_forget' => 'error'])->withInput();
+        }
+
+        $count = $this->rs->count();
+
+        $this->rs->create([
+            'email' => $reqData->email,
+            'token' => bcrypt($count),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        return redirect()->route('resetUser')->with('email', $reqData->email);
     }
 
     public function resetUser()
@@ -191,24 +201,32 @@ class GeneralController extends Controller
 
     public function resetProcess(Request $reqData)
     {
-        if ($reqData->password !== $reqData->password_confirmation) {
-            $msg = 'Password tidak sama !!';
-            return redirect()->route('resetUser')->with('resetFailNotif', $msg)->with('email', $reqData->email);
+        $validator = Validator::make($reqData->all(), [
+            'password' => 'required|min:6',
+            'password_confirmation' => 'required|same:password'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('resetUser')->withErrors($validator)->with('email', $reqData->email);
         }
 
-        $validated = $this->db->where('email', '=', $reqData->email)->first();
+        $user = $this->db->where('email', '=', $reqData->email)->first();
 
-        if (!$validated) {
-            $msg = ' Anda gagal melakukan reset password, harap coba lagi !!';
-            return redirect()->route('resetUser')->with('resetFailNotif', $msg);
-        } else {
-            $validated->update([
-                'password' => bcrypt($reqData->password)
-            ]);
-            $tempresetPassword = $this->rs->select('email')->where('email', '=', $reqData->email);
-            $tempresetPassword->delete();
-            $msg = ' Selamat anda berhasil melakukan reset password !!';
-            return redirect()->route('index')->with('ResetPassNotif', $msg);
-        }        
+        if (!$user) {
+            return redirect()->route('resetUser')->withErrors([
+                'password' => 'error',
+                'password_confirmation' => 'error'
+            ])->with('email', $reqData->email);
+        }
+
+        if (Hash::check($reqData->password, $user->password)) {
+            return redirect()->route('resetUser')->withErrors([
+                'password' => 'error'
+            ])->with('email', $reqData->email);
+        }
+
+        $user->update(['password' => bcrypt($reqData->password)]);
+        $this->rs->where('email', '=', $reqData->email)->delete();
+        return redirect()->route('index')->with('ResetPassNotif', 'Berhasil reset password !!');
     }
 }
