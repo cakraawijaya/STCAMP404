@@ -32,8 +32,10 @@
             Pembelajaran akan slalu kami update menyesuaikan kebutuhan industri saat ini.
             Jadi tunggu apa lagi ??
         </p>
-        @if(!Session()->has('LogSession'))
-            <a href="{{ url('/dashboard') }}" class="btn btn-md btn-outline-success btn-ik col-md-2"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+        @if(Session()->has('LogSession'))
+            @if($LogUser->role == 'admin' || $LogUser->role == 'siswa')
+                <a href="{{ url('/dashboard') }}" class="btn btn-md btn-outline-success btn-ik col-md-2"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+            @endif
         @endif
         @if(Session()->has('LogSession'))
             @if($LogUser->role == 'admin')
