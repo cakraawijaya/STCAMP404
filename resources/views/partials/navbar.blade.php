@@ -41,58 +41,80 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form class="row g-2" method="POST" action="{{ url('/login') }}">
+        <form method="POST" action="{{ url('/login') }}">
           @csrf
-          <div class="col-md-12">
-            <label for="email" class="col-form-label text-md-end"><i class="bi bi-envelope me-1"></i> Email</label>
-            <input type="email" id="email_login" name="email" 
-            class="form-control @error('email_login') is-invalid @enderror" value="{{ old('email') }}" 
-            placeholder="Masukan email anda..." required autocomplete="email" autofocus>
+
+          <!-- EMAIL -->
+          <div class="mb-3">
+            <label class="form-label">
+              <i class="bi bi-envelope me-1"></i> Email
+            </label>
+
+            <input type="email" id="email_login" name="email"
+              class="form-control @error('email_login') is-invalid @enderror"
+              value="{{ old('email') }}"
+              placeholder="Masukan email anda..."
+              required>
+
             @error('email_login')
-              <span class="text-danger invalid-feedback" role="alert">
-                <i class="bi bi-exclamation-triangle-fill mr-1"></i>
-                <strong> Email salah / belum terdaftar di sistem !</strong>
-              </span>
+              <div class="text-danger small mt-1">
+                <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                Email salah / belum terdaftar di sistem !
+              </div>
             @enderror
           </div>
-          <div class="col-md-6 mt-2">
-            <label for="password" class="col-form-label text-md-end"><i class="bi bi-key me-1"></i> Kata Sandi</label>
-            <div class="input-group mb-3">
+
+          <!-- PASSWORD -->
+          <div class="mb-2">
+            <label class="form-label">
+              <i class="bi bi-key me-1"></i> Kata Sandi
+            </label>
+
+            <div class="input-group">
               <button onclick="ShowPassLogin()" class="btn btn-outline-secondary" type="button">
                 <i class="bi bi-eye-fill"></i>
               </button>
-              <input type="password" id="password_login" name="password" 
-              class="form-control @error('password_login') is-invalid @enderror"
-              required autocomplete="current-password" placeholder="Masukan kata sandi anda...">
-              @error('password_login')
-                <span class="text-danger invalid-feedback" role="alert">
-                  <i class="bi bi-exclamation-triangle-fill mr-1"></i>
-                  <strong class="me-2">Password salah !</strong>
-                </span>
-              @enderror
+
+              <input type="password" id="password_login" name="password"
+                class="form-control @error('password_login') is-invalid @enderror"
+                placeholder="Masukan kata sandi anda..."
+                required>
             </div>
-              <div class="col-md-12 mt-2">
-                <a class="lupas" href="{{ url('/forgot-password') }}">
-                  Lupa Password <i class="bi bi-patch-question"></i>
-                </a>
+
+            @error('password_login')
+              <div class="text-danger small mt-1">
+                <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                Password salah !
               </div>
-            </div>
-            <div class="col-md-6 mt-4" style="padding: 32px">
-              <div class="form-group form-check icheck-primary">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                <label class="form-check-label" for="remember">
-                    Setuju & Ingat!!
-                </label>
-              </div>
-            </div>
+            @enderror
           </div>
-          <div class="modal-footer bg-primary text-white">
-              <a type="button" class="btn btn-light btn-sm me-3" href="{{ url('/registrasi') }}">
-              <i class="bi bi-person-lines-fill me-1"></i> <span class="fontreg">Registrasi</span></a>
-              <button type="submit" class="btn btn-light btn-sm">
-              <i class="bi bi-door-open me-1"></i> <span class="fontmasuk">Masuk</span></button>
+
+          <div class="d-flex justify-content-between align-items-center mt-4">
+
+            <div class="form-check m-0">
+              <input class="form-check-input" type="checkbox" id="remember" name="remember">
+              <label class="form-check-label" for="remember">
+                Ingat saya
+              </label>
+            </div>
+
+            <a class="lupas" href="{{ url('/forgot-password') }}">
+              Lupa Password <i class="bi bi-patch-question"></i>
+            </a>
+
           </div>
-        </form>
+        </div>
+
+        <div class="modal-footer bg-primary gap-2 text-white mt-4">
+          <a class="btn btn-light btn-sm" href="{{ url('/registrasi') }}">
+            <i class="bi bi-person-lines-fill me-1"></i> Registrasi
+          </a>
+
+          <button type="submit" class="btn btn-light btn-sm">
+            <i class="bi bi-door-open me-1"></i> Masuk
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

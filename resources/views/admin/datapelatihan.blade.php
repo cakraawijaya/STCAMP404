@@ -145,8 +145,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-info mt-2">
-                        <a class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
+                    <div class="modal-footer bg-info gap-3 mt-2">
+                        <a class="btn btn-light btn-sm btncancel" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
                         <button type="submit" class="btn btn-light btn-sm btnacc"><i class="bi bi-person-check me-1"></i> Setuju</button>
                     </div>
                 </form>
@@ -185,8 +185,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-info mt-2">
-                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
+                    <div class="modal-footer bg-info gap-3 mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
                         <button type="submit" class="btn btn-light btn-sm btnacc"><i class="bi bi-person-check me-1"></i> Setuju</button>
                     </form>
                 </div>
@@ -206,8 +206,8 @@
                 <div class="modal-body text-center py-5">
                     <small class="text-muted py-5">Anda yakin ingin menghapus data ID = {{ $v->id }} ?</small>
                 </div>
-                <div class="modal-footer bg-info mt-2">
-                    <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
+                <div class="modal-footer bg-info gap-3 mt-2">
+                    <a type="button" class="btn btn-light btn-sm btncancel" data-bs-dismiss="modal">
                     <i class="bi bi-person-x me-1"></i> Batal</a>
                     <a type="submit" href="{{ url('/data-pelatihan/delete/'.$v->id) }}" class="btn btn-light btn-sm btnacc">
                     <i class="bi bi-person-check me-1"></i> Setuju</a>

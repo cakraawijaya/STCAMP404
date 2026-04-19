@@ -40,6 +40,12 @@ input::placeholder, .lupas, .login {
     color: white !important;
 }
 
+.special-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* Content */
 .text-sm {
     font-size: small;

@@ -33,26 +33,28 @@
             Pembelajaran akan slalu kami update menyesuaikan kebutuhan industri saat ini.
             Jadi tunggu apa lagi ??
         </p>
-        @if(Session()->has('LogSession'))
-            @if($LogUser->role == 'admin' || $LogUser->role == 'siswa')
-                <a href="{{ url('/dashboard') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+        <div class="special-section gap-3">
+            @if(Session()->has('LogSession'))
+                @if($LogUser->role == 'admin' || $LogUser->role == 'siswa')
+                    <a href="{{ url('/dashboard') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+                @endif
             @endif
-        @endif
-        @if(Session()->has('LogSession'))
-            @if($LogUser->role == 'admin')
-                <a href="{{ url('/data-pelatihan') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-clipboard-data-fill me-1"></i> Manajemen Data Pelatihan</a>
-                <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
+            @if(Session()->has('LogSession'))
+                @if($LogUser->role == 'admin')
+                    <a href="{{ url('/data-pelatihan') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-clipboard-data-fill me-1"></i> Manajemen Data Pelatihan</a>
+                    <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
+                @endif
             @endif
-        @endif
-        @if(Session()->has('LogSession'))
-            @if($LogUser->role == 'siswa')
-                <a href="{{ url('/data-siswa') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</a>
-                <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
+            @if(Session()->has('LogSession'))
+                @if($LogUser->role == 'siswa')
+                    <a href="{{ url('/data-siswa') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</a>
+                    <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
+                @endif
             @endif
-        @endif
-        @if(!Session()->has('LogSession'))
-            <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik mx-2 my-2"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
-        @endif
+            @if(!Session()->has('LogSession'))
+                <a href="{{ url('/info-kegiatan') }}" class="btn btn-md btn-outline-primary btn-ik"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</a>
+            @endif
+        </div>
     </div>
     <!-- Jumbotron Akhir -->
 

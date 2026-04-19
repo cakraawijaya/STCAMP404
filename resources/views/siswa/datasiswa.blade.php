@@ -92,8 +92,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer bg-primary mt-2">
-                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
+                    <div class="modal-footer bg-primary gap-3 mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel" data-bs-dismiss="modal">
                         <i class="bi bi-person-x me-1"></i> Batal</a>
                         <button type="submit" class="btn btn-light btn-sm btnacc">
                         <i class="bi bi-person-check me-1"></i> Setuju</button>

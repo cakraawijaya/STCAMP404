@@ -210,17 +210,17 @@
                     <h5 class="modal-title"><i class="bi bi-person-bounding-box me-1"></i> Ubah Profil</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form class="row g-2" action="{{ url('/updateprofile') }}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body p-4">
+                    <form action="{{ url('/updateprofile') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="siswa_id" id="prfsiswaID" value="{{ $LogUser->siswa_id }}">
-                        <div class="row col-md-12">
+                        <div class="row">
                             <div class="col-md-12 mt-2">
                                 <label for="prfname"><i class="bi bi-person me-1"></i> Ubah Nama Pengguna</label>
                                 <input type="text" class="form-control mt-2" name="name" id="prfname" value="{{ $LogUser->name }}" placeholder="Ubah nama anda..." required>
                             </div>
                         </div>
-                        <div class="row col-md-12">
+                        <div class="row">
                             <div class="col-md-6 mt-4">
                                 <label for="prfemail"><i class="bi bi-envelope me-1"></i> Ubah Email Pengguna</label>
                                 <input type="email" class="form-control mt-2" name="email" id="prfemail" value="{{ $LogUser->email }}" placeholder="Ubah email anda..." required>
@@ -235,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row col-md-12">
+                        <div class="row">
                             <div class="col-md-12 mt-2">
                                 <label for="prfimg"><i class="bi bi-card-image me-1"></i> Ubah Foto Pengguna</label>
                                 <div class="input-group mb-3 mt-2">
@@ -244,8 +244,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-primary text-white mt-2">
-                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
+                    <div class="modal-footer bg-primary text-white gap-3 mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel" data-bs-dismiss="modal">
                         <i class="bi bi-person-x me-1"></i> Batal</a>
                         <button type="submit" class="btn btn-light btn-sm btnacc">
                         <i class="bi bi-person-check me-1"></i> Setuju</button>
