@@ -1,0 +1,102 @@
+/* Navbar */
+.mainnavcolor{
+    background-color: skyblue;
+}
+
+.modallogin, .modalmenu{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 6%;
+}
+
+input::placeholder, .lupas, .login {
+    font: 14px sans-serif;
+    text-decoration: none;
+}
+
+.fontmasuk,
+.fontreg {
+    color: white;
+}
+
+.fontmasuk:hover,
+.fontreg:hover {
+    color: black;
+}
+
+.navbar-collapse{
+    padding-left: 5%;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+.nav-link:hover, .masuk, 
+.btn-ik, .btn-ds, .btncancel, 
+.btnacc, .keluar{
+    font-weight: 500;
+}
+
+/* Content */
+.text-sm {
+    font-size: small;
+}
+.card-text, .accordion-body {
+    text-align: justify;
+}
+
+.card-img-top{
+    height: 320px;
+    width: auto;
+}
+
+td{
+    font-size: 14px;
+}
+
+/* Footer */
+.footercontainer{
+    padding: 20px 50px 20px 50px;
+}
+
+/* Font Options */
+.serif {
+    font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+.sansserif {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.monospace {
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+.cursive {
+    font-family: cursive;
+}
+
+.fantasy {
+    font-family: fantasy;
+}
+
+.emoji {
+    font-family: emoji;
+}
+
+.math {
+    font-family: math;
+}
+
+.fangsong {
+    font-family: fangsong;
+}
+
+/* Profile */
+.img-profile{
+    min-height: 17em;
+    max-height: 17em;
+    max-width: auto;
+}

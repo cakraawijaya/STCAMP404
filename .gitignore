@@ -1,0 +1,60 @@
+# ========================
+# Laravel Core
+# ========================
+/vendor
+/node_modules
+
+/public/hot
+/public/storage
+/public/build
+
+/storage/*.key
+/storage/logs
+
+/bootstrap/cache/*.php
+
+# ========================
+# Environment (SANGAT PENTING)
+# ========================
+.env
+.env.backup
+.env.*.local
+
+# ========================
+# Logs & Debug
+# ========================
+*.log
+npm-debug.log
+yarn-error.log
+.phpunit.result.cache
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# IDE / Editor
+# ========================
+.idea
+.vscode
+
+# ========================
+# Local Dev Environment
+# ========================
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+
+# ========================
+# Testing / Cache
+# ========================
+/coverage
+/.phpunit.cache
+
+# ========================
+# Misc
+# ========================
+*.swp
+*.swo
