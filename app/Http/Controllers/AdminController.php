@@ -50,26 +50,29 @@ class AdminController extends Controller
     public function create(Request $reqdata)
     {
         if (Session::has('adminAccess')) {
-            $DB_NULLnis = $this->db->select('pelatihan')->where('nis', '=', $reqdata->nis)->where('pelatihan', '=', NULL)->distinct()->get();
-            $DB_NULLnama = $this->db->select('pelatihan')->where('nama_siswa', '=', $reqdata->nama_siswa)->where('pelatihan', '=', NULL)->distinct()->get();
-            $DB_SearchNIS = $this->db->select('pelatihan')->where('nis', '=', $reqdata->nis)->where('pelatihan', '=', $reqdata->pelatihan)->distinct()->get();
-            $DB_SearchNama = $this->db->select('pelatihan')->where('nama_siswa', '=', $reqdata->nama_siswa)->where('pelatihan', '=', $reqdata->pelatihan)->distinct()->get();
-            if ($DB_SearchNIS == $DB_NULLnis) {
-                if ($DB_SearchNama == $DB_NULLnama) {
-                    $this->db->create([
-                        'nis' => $reqdata->nis,
-                        'nama_siswa' => $reqdata->nama_siswa,
-                        'pelatihan' => $reqdata->pelatihan
-                    ]);
-                    $msg = ' Selamat anda berhasil menambahkan data siswa !!';
-                    return redirect()->route('data-pelatihan')->with('addAdminNotif', $msg);
-                }
-                $msg = ' Selamat anda berhasil menambahkan data siswa !!';
-                return redirect()->route('data-pelatihan')->with('addAdminNotif', $msg);
-            } else {
-                $msg = 'Data pelatihan sudah ada !!';
-                return redirect()->route('data-pelatihan')->with('errorCreateAdminNotif', $msg);
+
+            $user = $this->dbu->where('siswa_id', $reqdata->nis)->first();
+
+            if (!$user) {
+                return redirect()->route('data-pelatihan')->with('errorCreateAdminNotif', 'NIS tidak ditemukan !!');
             }
+
+            $cek = $this->db
+                ->where('nis', $reqdata->nis)
+                ->where('pelatihan', $reqdata->pelatihan)
+                ->first();
+
+            if ($cek) {
+                return redirect()->route('data-pelatihan')->with('errorCreateAdminNotif', 'Data pelatihan sudah ada !!');
+            }
+
+            $this->db->create([
+                'nis' => $reqdata->nis,
+                'nama_siswa' => $user->name,
+                'pelatihan' => $reqdata->pelatihan
+            ]);
+
+            return redirect()->route('data-pelatihan')->with('addAdminNotif', 'Berhasil menambahkan data siswa !!');
         }
     }
 
