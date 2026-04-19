@@ -164,7 +164,7 @@ class GeneralController extends Controller
                 'created_at' => $reqData->created_at,
                 'updated_at' => $reqData->updated_at
             ]);
-            return redirect()->route('resetUser');
+            return redirect()->route('resetUser')->with('email', $reqData->email);
         } else {
             $msg = ' Email yang anda masukkan salah atau belum terdaftar!!';
             return redirect()->route('forgetUser')->with('forgetFailNotif', $msg);
@@ -173,18 +173,27 @@ class GeneralController extends Controller
 
     public function resetUser()
     {
-        $EmailReset = $this->rs->select('email')->get();
-        $dataReset = ([
-            'data' => $EmailReset
-        ]);
-        return view('general.reset', $dataReset);
+        $email = session('email');
+
+        if (!$email) {
+            return redirect()->route('forgetUser');
+        }
+
+        $EmailReset = $this->rs->where('email', '=', $email)->first();
+
+        return view('general.reset', ['data' => $EmailReset]);
     }
 
     public function resetProcess(Request $reqData)
     {
+        if ($reqData->password !== $reqData->password_confirmation) {
+            $msg = 'Password tidak sama !';
+            return redirect()->route('resetUser')->with('resetFailNotif', $msg)->with('email', $reqData->email);
+        }
+
         $validated = $this->db->where('email', '=', $reqData->email)->first();
-        $emailNULL = $this->db->select('email')->where('email', '=', NULL)->distinct()->get();
-        if ($validated == $emailNULL) {
+
+        if (!$validated) {
             $msg = ' Anda gagal melakukan reset password, harap coba lagi!!';
             return redirect()->route('resetUser')->with('resetFailNotif', $msg);
         } else {

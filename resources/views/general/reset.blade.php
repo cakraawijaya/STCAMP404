@@ -14,52 +14,51 @@
     @endif
     <!-- Session Alert Reset Failed -->
     
-@foreach ($data as $v)
-    <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
-        @csrf
-        <div class="col-xl-12">
-            <div class="mt-5 col-md-6 input-sm">
-                <label for="password"><i class="bi bi-envelope me-1"></i> Email</label>
-                <div class="input-group mb-3 mt-2">
-                    <input type="email" class="form-control" value="{{ $v->email }}" disabled>
-                    <input type="hidden" name="email" value="{{ $v->email }}">
+    @if($data)
+        <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
+            @csrf
+            <div class="col-xl-12">
+                <div class="mt-5 col-md-6 input-sm">
+                    <label for="password"><i class="bi bi-envelope me-1"></i> Email</label>
+                    <div class="input-group mb-3 mt-2">
+                        <input type="email" class="form-control" value="{{ $data->email }}" disabled>
+                        <input type="hidden" name="email" value="{{ $data->email }}">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 mt-2 input-sm me-4">
-                <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
-                <div class="input-group mb-3 mt-2">
-                    <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
-                    <i class="bi bi-eye-fill"></i>
-                    </button>
-                    <input id="fpassword" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password" placeholder="Masukan kata sandi baru..." required autofocus>
-                    @error('fpassword')
-                        <span class="text-danger invalid-feedback" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                            <strong> Password salah: gagal konfirmasi!</strong>
-                        </span>
-                    @enderror
+            <div class="row">
+                <div class="col-md-3 mt-2 input-sm me-4">
+                    <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
+                    <div class="input-group mb-3 mt-2">
+                        <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
+                        <i class="bi bi-eye-fill"></i>
+                        </button>
+                        <input id="fpassword" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password" placeholder="Masukan kata sandi baru..." required autofocus>
+                        @error('fpassword')
+                            <span class="text-danger invalid-feedback" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                <strong> Password salah: gagal konfirmasi!</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-md-3 mt-2 input-sm">
+                    <label for="password-confirm"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
+                    <div class="input-group mb-3 mt-2">
+                        <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
+                        <i class="bi bi-eye-fill"></i>
+                        </button>
+                        <input id="fpassword-confirm" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password_confirmation" placeholder="Konfirmasi kata sandi baru..." required>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-2 input-sm">
-                <label for="password-confirm"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
-                <div class="input-group mb-3 mt-2">
-                    <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
-                    <i class="bi bi-eye-fill"></i>
-                    </button>
-                    <input id="fpassword-confirm" type="password" class="form-control @error('fpassword') is-invalid @enderror" name="password_confirmation" placeholder="Konfirmasi kata sandi baru..." required>
+            <div class="col-xl-12 mt-4">
+                <div class="input-sm">
+                    <button type="submit" class="btn btn-outline-success btn-md btnreg col-xl-6 p-3"><i class="bi bi-pencil-fill me-1"></i> Reset Password</button>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-12 mt-4">
-            <div class="input-sm">
-                <button type="submit" class="btn btn-outline-success btn-md btnreg col-xl-6 p-3"><i class="bi bi-pencil-fill me-1"></i> Reset Password</button>
-            </div>
-        </div>
-    </form>
-    @endforeach
-
+        </form>
+    @endif
 
     <!-- Show Password-->
     <script>
