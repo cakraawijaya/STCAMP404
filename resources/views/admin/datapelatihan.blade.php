@@ -13,7 +13,7 @@
                     </div>
                     <form action="{{ url('/data-pelatihan') }}" method="GET">
                         <input class="form-control me-2" type="search" name="search" placeholder="Cari Data Siswa...." aria-label="Search">
-                        <button type="submit" class="btn btn-outline-success btn-group" role="group"><i class="bi bi-search me-1"></i> Cari</button>
+                        <button type="submit" class="btn btn-info btn-group" role="group"><i class="bi bi-search me-1"></i> Cari</button>
                     </form>
                 </form>
             </div>
@@ -83,13 +83,13 @@
                     <td class="p-2 align-middle">{{ $v->nis }}</td>
                     <td class="p-2 align-middle">{{ $v->nama_siswa }}</td>
                     <td class="p-2 align-middle">{{ $v->pelatihan }}</td>
-                    <td class="p-2 align-middle">{{ $v->updated_at }}</td>
+                    <td class="p-2 align-middle">{{ $v->updated_at->format('d:m:Y s:i:H') }}</td>
                     <td>
                         <div class="d-grid gap-2 p-2 align-middle">
-                            <a class="btn btn-outline-warning btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
+                            <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
                                 <i class="bi bi-pencil-square me-1"></i> Ubah
                             </a>
-                            <a class="btn btn-outline-danger btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
+                            <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
                                 <i class="bi bi-trash3 me-1"></i> Hapus
                             </a>
                         </div>
@@ -99,7 +99,7 @@
             @else
                 <tr>
                     <td colspan="5" class="p-4 text-center align-middle">
-                        <strong>Data tidak ditemukan....</strong>
+                        Data tidak ditemukan....
                     </td>
                 </tr>
             @endif
@@ -109,9 +109,9 @@
 
     <!-- Pop Up Modal Create-->
     <div class="modal fade modalmenu" id="ModalCreate" tabindex="-1" aria-labelledby="ModalCreateLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-success text-light">
+                <div class="modal-header bg-info text-dark">
                     <h5 class="modal-title"><i class="bi bi-person-plus-fill me-1"></i> Tambah Data</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -145,9 +145,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-success mt-2">
-                        <a class="btn btn-secondary btn-sm btncancel text-light" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
-                        <button type="submit" class="btn btn-primary btn-sm btnacc text-light"><i class="bi bi-person-check me-1"></i> Setuju</button>
+                    <div class="modal-footer bg-info mt-2">
+                        <a class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
+                        <button type="submit" class="btn btn-light btn-sm btnacc"><i class="bi bi-person-check me-1"></i> Setuju</button>
                     </div>
                 </form>
             </div>
@@ -158,9 +158,9 @@
     <!-- Pop Up Modal Update-->
     @foreach($data as $v)
     <div class="modal fade modalmenu" id="ModalUpdate-{{ $v->id }}" tabindex="-1" aria-labelledby="ModalUpdateLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-success text-light">
+                <div class="modal-header bg-info text-dark">
                     <h5 class="modal-title"><i class="bi bi-pencil-square me-1"></i> Ubah Data</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -185,9 +185,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-success mt-2">
-                        <a type="button" class="btn btn-secondary btn-sm btncancel text-light" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
-                        <button type="submit" class="btn btn-primary btn-sm btnacc text-light"><i class="bi bi-person-check me-1"></i> Setuju</button>
+                    <div class="modal-footer bg-info mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal"><i class="bi bi-person-x me-1"></i> Batal</a>
+                        <button type="submit" class="btn btn-light btn-sm btnacc"><i class="bi bi-person-check me-1"></i> Setuju</button>
                     </form>
                 </div>
             </div>
@@ -197,19 +197,19 @@
 
     <!-- Pop Up Modal Delete-->
     <div class="modal fade modalmenu" id="ModalDelete-{{ $v->id }}" tabindex="-1" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-success text-light">
+                <div class="modal-header bg-info text-dark">
                     <h5 class="modal-title"><i class="bi bi-trash3 me-1"></i> Hapus Data</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <small class="text-muted">Anda yakin ingin menghapus data yang memiliki ID = "{{ $v->id }}" ini ?</small>
+                <div class="modal-body text-center py-5">
+                    <small class="text-muted py-5">Anda yakin ingin menghapus data ID = {{ $v->id }} ?</small>
                 </div>
-                <div class="modal-footer bg-success mt-2">
-                    <a type="button" class="btn btn-secondary btn-sm btncancel text-light" data-bs-dismiss="modal">
+                <div class="modal-footer bg-info mt-2">
+                    <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
                     <i class="bi bi-person-x me-1"></i> Batal</a>
-                    <a type="submit" href="{{ url('/data-pelatihan/delete/'.$v->id) }}" class="btn btn-primary btn-sm btnacc text-light">
+                    <a type="submit" href="{{ url('/data-pelatihan/delete/'.$v->id) }}" class="btn btn-light btn-sm btnacc">
                     <i class="bi bi-person-check me-1"></i> Setuju</a>
                 </div>
             </div>

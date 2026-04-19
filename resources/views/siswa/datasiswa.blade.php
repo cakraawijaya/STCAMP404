@@ -49,7 +49,7 @@
             <tr>
                 <td>{{ $v->nis }}</td>
                 <td>{{ $v->pelatihan }}</td>
-                <td>{{ $v->created_at }}</td>
+                <td>{{ $v->created_at->format('d:m:Y s:i:H') }}</td>
             </tr>
             @endforeach
         </tbody>
@@ -59,11 +59,11 @@
 
     <!-- Pop Up Modal Add-->
     <div class="modal fade modalmenu" id="ModalAdd" tabindex="-1" aria-labelledby="ModalAddLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-success text-light">
+                <div class="modal-header bg-primary text-light">
                     <h5 class="modal-title"><i class="bi bi-person-plus-fill me-1"></i> Daftar Pelatihan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="row g-2" action="{{ url('/data-siswa/add') }}" method="POST">
@@ -92,10 +92,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer bg-success mt-2">
-                        <a type="button" class="btn btn-secondary btn-sm btncancel text-light" data-bs-dismiss="modal">
+                    <div class="modal-footer bg-primary mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
                         <i class="bi bi-person-x me-1"></i> Batal</a>
-                        <button type="submit" class="btn btn-primary btn-sm btnacc text-light">
+                        <button type="submit" class="btn btn-light btn-sm btnacc">
                         <i class="bi bi-person-check me-1"></i> Setuju</button>
                     </div>
                 </form>

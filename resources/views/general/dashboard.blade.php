@@ -149,26 +149,26 @@
                             <div class="row">
                                 <div class="col">
                                     <p><small class="text-muted"><i class="bi bi-dot me-1"></i> Ubah Profil 
-                                        <a class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#Modal2">
+                                        <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
                                     <i class="bi bi-person-bounding-box"></i></a></small></p>
                                 </div>
                                 @if($LogUser->role == 'admin')
                                     <div class="col">
                                         <p><small class="text-muted"><i class="bi bi-dot me-1"></i> Manajemen Data Pelatihan 
-                                            <a class="btn btn-sm btn-outline-success" href="{{ url('/data-pelatihan') }}">
+                                            <a class="btn btn-sm btn-outline-primary" href="{{ url('/data-pelatihan') }}">
                                         <i class="bi bi-clipboard-data-fill"></i></a></small></p>
                                     </div>
                                 @endif
                                 @if($LogUser->role == 'siswa')
                                     <div class="col">
                                         <p><small class="text-muted"><i class="bi bi-dot me-1"></i> Data Siswa 
-                                            <a class="btn btn-sm btn-outline-success" href="{{ url('/data-siswa') }}">
+                                            <a class="btn btn-sm btn-outline-primary" href="{{ url('/data-siswa') }}">
                                         <i class="bi bi-bar-chart-steps"></i></a></small></p>
                                     </div>
                                 @endif
                                 <div class="col">
                                     <p><small class="text-muted"><i class="bi bi-dot me-1"></i> Info Pelatihan 
-                                        <a class="btn btn-sm btn-outline-success" href="{{ url('/info-kegiatan') }}">
+                                        <a class="btn btn-sm btn-outline-primary" href="{{ url('/info-kegiatan') }}">
                                     <i class="bi bi-megaphone-fill"></i></a></small></p>
                                 </div>
                             </div>
@@ -204,11 +204,11 @@
 
     <!-- Pop Up Modal 2-->
     <div class="modal fade modalmenu" id="Modal2" tabindex="-1" aria-labelledby="Modal2Label" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-success text-light">
+                <div class="modal-header bg-primary text-light">
                     <h5 class="modal-title"><i class="bi bi-person-bounding-box me-1"></i> Ubah Profil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="row g-2" action="{{ url('/updateprofile') }}" method="POST" enctype="multipart/form-data">
@@ -244,12 +244,12 @@
                             </div>
                         </div>
                     </div>
-                        <div class="modal-footer bg-success mt-2">
-                            <a type="button" class="btn btn-secondary btn-sm btncancel text-light" data-bs-dismiss="modal">
-                            <i class="bi bi-person-x me-1"></i> Batal</a>
-                            <button type="submit" class="btn btn-primary btn-sm btnacc text-light">
-                            <i class="bi bi-person-check me-1"></i> Setuju</button>
-                        </div>
+                    <div class="modal-footer bg-primary text-white mt-2">
+                        <a type="button" class="btn btn-light btn-sm btncancel me-3" data-bs-dismiss="modal">
+                        <i class="bi bi-person-x me-1"></i> Batal</a>
+                        <button type="submit" class="btn btn-light btn-sm btnacc">
+                        <i class="bi bi-person-check me-1"></i> Setuju</button>
+                    </div>
                     </form>
                 </div>
             </div>

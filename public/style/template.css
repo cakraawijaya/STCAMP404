@@ -3,26 +3,19 @@
     background-color: skyblue;
 }
 
-.modallogin, .modalmenu{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: 6%;
+.modal-content {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.modal-footer {
+    margin: 0;
+    border-top: none;
 }
 
 input::placeholder, .lupas, .login {
     font: 14px sans-serif;
     text-decoration: none;
-}
-
-.fontmasuk,
-.fontreg {
-    color: white;
-}
-
-.fontmasuk:hover,
-.fontreg:hover {
-    color: black;
 }
 
 .navbar-collapse{
@@ -37,6 +30,14 @@ input::placeholder, .lupas, .login {
 .btn-ik, .btn-ds, .btncancel, 
 .btnacc, .keluar{
     font-weight: 500;
+}
+
+.btn-danger, .btn-outline-danger {
+    color: black !important;
+}
+
+.btn-danger:hover, .btn-outline-danger:hover {
+    color: white !important;
 }
 
 /* Content */

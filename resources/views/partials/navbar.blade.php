@@ -22,9 +22,9 @@
       </ul>
       <form class="d-flex">
         @if(Session()->has('LogSession'))
-          <a class="btn btn-outline-success keluar" href="{{ url('/logout') }}"><i class="bi bi-door-closed me-1"></i> Keluar</a>
+          <a class="btn btn-primary keluar" href="{{ url('/logout') }}"><i class="bi bi-door-closed me-1"></i> Keluar</a>
         @else
-          <a class="btn btn-outline-success masuk" data-bs-toggle="modal" data-bs-target="#ModalLogin"><i class="bi bi-door-open me-1"></i> Masuk</a>
+          <a class="btn btn-primary masuk" data-bs-toggle="modal" data-bs-target="#ModalLogin"><i class="bi bi-door-open me-1"></i> Masuk</a>
         @endif
       </form>
     </div>
@@ -34,11 +34,11 @@
 
 <!-- Pop Up Modal 1-->
 <div class="modal fade modallogin" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header bg-success text-light">
+      <div class="modal-header bg-primary text-light">
         <h5 class="modal-title"><i class="bi bi-door-open me-1"></i> Masuk</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form class="row g-2" method="POST" action="{{ url('/login') }}">
@@ -86,10 +86,10 @@
               </div>
             </div>
           </div>
-          <div class="modal-footer bg-success">
-              <a type="button" class="btn btn-outline-warning btn-sm btnreg" href="{{ url('/registrasi') }}">
+          <div class="modal-footer bg-primary text-white">
+              <a type="button" class="btn btn-light btn-sm me-3" href="{{ url('/registrasi') }}">
               <i class="bi bi-person-lines-fill me-1"></i> <span class="fontreg">Registrasi</span></a>
-              <button type="submit" class="btn btn-outline-info btn-sm btnmasuk">
+              <button type="submit" class="btn btn-light btn-sm">
               <i class="bi bi-door-open me-1"></i> <span class="fontmasuk">Masuk</span></button>
           </div>
         </form>
