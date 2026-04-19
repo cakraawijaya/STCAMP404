@@ -77,22 +77,32 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($data as $v)
-            <tr>
-                <td>{{ $v->nis }}</td>
-                <td>{{ $v->nama_siswa }}</td>
-                <td>{{ $v->pelatihan }}</td>
-                <td>{{ $v->updated_at }}</td>
-                <td>
-                    <div class="d-grid gap-2">
-                        <a class="btn btn-outline-warning btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
-                            <i class="bi bi-pencil-square me-1"></i> Ubah</a>
-                        <a class="btn btn-outline-danger btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
-                            <i class="bi bi-trash3 me-1"></i> Hapus</a>
-                    </div>
-                </td>
-            </tr>
-            @endforeach
+            @if($data->count() > 0)
+                @foreach($data as $v)
+                <tr>
+                    <td class="p-2 align-middle">{{ $v->nis }}</td>
+                    <td class="p-2 align-middle">{{ $v->nama_siswa }}</td>
+                    <td class="p-2 align-middle">{{ $v->pelatihan }}</td>
+                    <td class="p-2 align-middle">{{ $v->updated_at }}</td>
+                    <td>
+                        <div class="d-grid gap-2 p-2 align-middle">
+                            <a class="btn btn-outline-warning btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
+                                <i class="bi bi-pencil-square me-1"></i> Ubah
+                            </a>
+                            <a class="btn btn-outline-danger btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
+                                <i class="bi bi-trash3 me-1"></i> Hapus
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="5" class="p-4 text-center align-middle">
+                        <strong>Data tidak ditemukan....</strong>
+                    </td>
+                </tr>
+            @endif
         </tbody>
     </table>
     {{ $data->links() }}
