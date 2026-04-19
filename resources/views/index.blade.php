@@ -1,26 +1,51 @@
 @extends('layout.main')
 
 @section('container')
-    <!-- Session Alert Logout -->
-    @if ($msgLogout = Session::get('LogoutNotif'))
+    <!-- Session Alert: Success Logout -->
+    @if ($msgSuccessLogout = Session::get('LogoutNotif'))
         <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgLogout }}
+                {{ $msgSuccessLogout }}
             </small>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif    
-    <!-- Akhir Session Alert Logout -->
-    <!-- Session Alert Success Reset Password -->
-    @if ($msgReset = Session::get('ResetPassNotif'))
+    <!-- Akhir Session Alert: Success Logout -->
+
+    <!-- Session Alert: Success Reset Password -->
+    @if ($msgSuccessReset = Session::get('ResetPassNotif'))
         <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgReset }}
+                {{ $msgSuccessReset }}
             </small>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif    
-    <!-- Akhir Session Alert Success Reset Password -->
+    <!-- Akhir Session Alert: Success Reset Password -->
+
+    <!-- Session Alert: Login Failed -->
+    @if ($msgLoginFailed = Session::get('loginError'))
+        <div id="loginAlert" class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+            <small class="text-muted">
+                <i class="bi bi-info-square-fill me-1"></i>
+                {{ $msgLoginFailed }}
+            </small>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var alertBox = document.getElementById('loginAlert');
+
+                if (alertBox) {
+                    alertBox.addEventListener('closed.bs.alert', function () {
+                        window.location.href = "{{ route('registrasi') }}";
+                    });
+                }
+            });
+        </script>
+    @endif
+    <!-- Akhir Session Alert: Login Failed -->
     <br>
 
 

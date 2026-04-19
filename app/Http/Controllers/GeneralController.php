@@ -64,10 +64,10 @@ class GeneralController extends Controller
                 $msg = " Anda berhasil masuk, selamat datang di menu utama STCAMP404!!";
                 return redirect()->route('dashboardaccount')->with('LoginNotif', $msg);
             } else{
-                return redirect()->route('registrasi');
+                return redirect()->route('index')->with('loginError', 'Data tidak ditemukan, silakan registrasi terlebih dahulu.');
             }
         } else{
-            return redirect()->route('registrasi');
+            return redirect()->route('index')->with('loginError', 'Data tidak ditemukan, silakan registrasi terlebih dahulu.');
         }
     }
 
