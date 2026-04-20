@@ -46,13 +46,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($value as $v)
-            <tr>
-                <td>{{ $v->nis }}</td>
-                <td>{{ $v->pelatihan }}</td>
-                <td>{{ $v->created_at->format('d:m:Y s:i:H') }}</td>
-            </tr>
-            @endforeach
+            @if($value->count() > 0)
+                @foreach($value as $v)
+                <tr>
+                    <td>{{ $v->nis }}</td>
+                    <td>{{ $v->pelatihan }}</td>
+                    <td>{{ $v->created_at->format('d:m:Y s:i:H') }}</td>
+                </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="3" class="p-4 text-center align-middle user-select-none">
+                        Belum ada data pelatihan
+                    </td>
+                </tr>
+            @endif
         </tbody>
     </table>
     <div class="user-select-none mt-4">
@@ -73,13 +81,13 @@
                       @csrf
                       <div class="col-md-12 mt-3 user-select-none">
                         <label for="AddName"><i class="bi bi-building me-1"></i> Nomor Induk Siswa</label>
-                        <input type="text" class="form-control mt-2" value="{{ $v->nis }}" disabled>
-                        <input type="hidden" name="siswa_id" required>
+                        <input type="text" class="form-control mt-2" value="{{ $LogUser->siswa_id }}" disabled>
+                        <input type="hidden" name="siswa_id" value="{{ $LogUser->siswa_id }}">
                       </div>
                       <div class="col-md-12 mt-4 user-select-none">
                         <label for="AddName"><i class="bi bi-person me-1"></i> Nama Pengguna</label>
-                        <input type="text" class="form-control mt-2" name="name" value="{{ $v->nama_siswa }}" disabled>
-                        <input type="hidden" name="name" required>
+                        <input type="text" class="form-control mt-2" name="name" value="{{ $LogUser->name }}" disabled>
+                        <input type="hidden" name="name" value="{{ $LogUser->name }}">
                       </div>  
                       <div class="col-md-12 mt-4 user-select-none">
                         <label for="AddExercise"><i class="bi bi-award me-1"></i> Pelatihan</label>

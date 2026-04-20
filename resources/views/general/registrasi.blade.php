@@ -1,11 +1,11 @@
 @extends('layout.main')
 
 @section('container')
-    <h2><i class="bi bi-person-lines-fill me-1"></i> Registrasi</h2><hr>
+    <h2 class="user-select-none"><i class="bi bi-person-lines-fill me-1"></i> Registrasi</h2><hr>
 
     <!-- Session Alert Register -->
     @if ($msgReg = Session::get('registerNotif'))
-        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
                 {{ $msgReg }}
             </small>
@@ -20,25 +20,25 @@
         <input name="siswa_id" type="hidden" value="{{ $defid + $jumlah }}">
         <input name="image" type="hidden" value="asset\img\profile\default.jpg">
         <div class="row">
-            <div class="col-md-4 mt-4 input-sm">
+            <div class="col-md-4 mt-4 input-sm user-select-none">
                 <label for="name"><i class="bi bi-envelope me-1"></i> Nama</label>
                 <input type="text" id="name_registration" name="name" 
                 class="form-control mt-3 @error('name') is-invalid @enderror" value="{{ old('name') }}" 
                 required autocomplete="name" autofocus placeholder="Masukan nama lengkap anda...">
                 @error('name')
-                <div class="text-danger small mt-1">
+                <div class="text-danger small mt-1 user-select-none">
                     <i class="bi bi-exclamation-triangle-fill me-1"></i>
                     <strong>Nama sudah ada di sistem, cari yang lain !!</strong>
                 </div>
                 @enderror
             </div>
-            <div class="col-md-4 mt-4 input-sm">
+            <div class="col-md-4 mt-4 input-sm user-select-none">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" id="email_registration" name="email" 
                 class="form-control mt-3 @error('email') is-invalid @enderror" value="{{ old('email') }}" 
                 required autocomplete="email" placeholder="Masukan email anda...">
                 @error('email')
-                <div class="text-danger small mt-1">
+                <div class="text-danger small mt-1 user-select-none">
                     <i class="bi bi-exclamation-triangle-fill me-1"></i>
                     <strong>Email sudah ada di sistem, cari yang lain !!</strong>
                 </div>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mt-4 input-sm">
+            <div class="col-md-4 mt-4 input-sm user-select-none">
                 <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
                 <div class="input-group mt-3">
                     <button onclick="ShowPassRegister()" class="btn btn-outline-secondary" type="button">
@@ -57,7 +57,7 @@
                     required autocomplete="new-password" placeholder="Masukan kata sandi anda...">
                 </div>
                 @error('password')
-                    <div class="text-danger small mt-1">
+                    <div class="text-danger small mt-1 user-select-none">
                         <i class="bi bi-exclamation-triangle-fill me-1"></i>
                         @if($errors->first('password') == 'error')
                             <strong>Gunakan password terbaru !</strong>
@@ -67,7 +67,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="col-md-4 mt-4 input-sm">
+            <div class="col-md-4 mt-4 input-sm user-select-none">
                 <label for="password-confirm"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
                 <div class="input-group mt-3">
                     <button onclick="ShowPassConfirmRegister()" class="btn btn-outline-secondary" type="button">
@@ -78,7 +78,7 @@
                     required autocomplete="new-password" placeholder="Konfirmasi kata sandi anda...">
                 </div>
                 @error('password_confirmation')
-                    <div class="text-danger small mt-1">
+                    <div class="text-danger small mt-1 user-select-none">
                         <i class="bi bi-exclamation-triangle-fill me-1"></i>
                         <strong>Konfirmasi password tidak cocok !</strong>
                     </div>
@@ -86,7 +86,7 @@
             </div>
         </div>
         
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-5 user-select-none">
             <a href="#" class="login" data-bs-toggle="modal" data-bs-target="#ModalLogin">
             Sudah Punya Akun ? Login Sekarang <i class="bi bi-patch-exclamation-fill"></i>
             </a>

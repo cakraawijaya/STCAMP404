@@ -39,10 +39,9 @@ class SiswaController extends Controller
     {
         if (Session::has('siswaAccess')) {
             $LogUser = $this->db->where('id', '=', Session::get('siswaAccess'))->first();
-            $DB_NULL = $this->dbs->select('pelatihan')->where('nis', '=', $LogUser->siswa_id)->where('pelatihan', '=', NULL)->distinct()->get();
             $DB_Search = $this->dbs->select('pelatihan')->where('nis', '=', $LogUser->siswa_id)->where('pelatihan', '=', $reqData->pelatihan)->distinct()->get();
 
-            if ($DB_Search == $DB_NULL){
+            if ($DB_Search->isEmpty()) {
                 $this->dbs->create([
                     'nis' => $LogUser->siswa_id,
                     'nama_siswa' => $LogUser->name,
