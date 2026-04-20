@@ -52,6 +52,8 @@
 
             <input type="email" id="email_login" name="email"
               class="form-control @error('email_login') is-invalid @enderror"
+              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" 
+              oninput="this.value = this.value.toLowerCase()"
               value="{{ old('email') }}"
               placeholder="Masukan email anda..."
               required>

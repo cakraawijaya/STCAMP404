@@ -36,6 +36,7 @@
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" id="email_registration" name="email" 
                 class="form-control mt-3 @error('email') is-invalid @enderror" value="{{ old('email') }}" 
+                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" oninput="this.value = this.value.toLowerCase()"
                 required autocomplete="email" placeholder="Masukan email anda...">
                 @error('email')
                 <div class="text-danger small mt-1 user-select-none">

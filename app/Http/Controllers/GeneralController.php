@@ -105,7 +105,7 @@ class GeneralController extends Controller
         $dataUpdate = [
             'siswa_id' => $reqdata->siswa_id,
             'name' => $reqdata->name,
-            'email' => $reqdata->email,
+            'email' => strtolower($reqdata->email)
         ];
 
         if (!empty($reqdata->password)) {
@@ -161,7 +161,7 @@ class GeneralController extends Controller
         $this->db->create([
             'siswa_id' => $reqData->siswa_id,
             'name' => $reqData->name,
-            'email' => $reqData->email,
+            'email' => strtolower($reqData->email),
             'password' => bcrypt($reqData->password),
             'image' => $reqData->image
         ]);
@@ -193,7 +193,7 @@ class GeneralController extends Controller
         $count = $this->rs->count();
 
         $this->rs->create([
-            'email' => $reqData->email,
+            'email' => strtolower($reqData->email),
             'token' => bcrypt($count),
             'created_at' => now(),
             'updated_at' => now()

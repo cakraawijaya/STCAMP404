@@ -9,6 +9,7 @@
             <div class="col-md-6 mt-4 input-sm user-select-none">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" name="email" class="form-control mt-3 @error('email_forget') is-invalid @enderror" 
+                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" oninput="this.value = this.value.toLowerCase()"
                 value="{{ old('email') }}" placeholder="Masukan email anda..." required autocomplete="email" autofocus>
                 @error('email_forget')
                     <span class="text-danger invalid-feedback user-select-none" role="alert">

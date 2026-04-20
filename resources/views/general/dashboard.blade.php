@@ -224,7 +224,9 @@
                         <div class="row">
                             <div class="col-md-6 mt-4 user-select-none">
                                 <label for="prfemail"><i class="bi bi-envelope me-1"></i> Ubah Email Pengguna</label>
-                                <input type="email" class="form-control mt-2" name="email" id="prfemail" value="{{ $LogUser->email }}" placeholder="Ubah email anda..." required>
+                                <input type="email" class="form-control mt-2" name="email" id="prfemail" 
+                                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" oninput="this.value = this.value.toLowerCase()"
+                                value="{{ $LogUser->email }}" placeholder="Ubah email anda..." required>
                             </div>
                             <div class="col-md-6 mt-4 user-select-none">
                                 <label for="prfpassword"><i class="bi bi-key me-1"></i> Ubah Kata Sandi</label>
