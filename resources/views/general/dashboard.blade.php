@@ -94,6 +94,10 @@
                     chart: { type: 'column' },
                     title: { text: '' },
 
+                    exporting: {
+                        tableCaption: ''
+                    },
+
                     xAxis: {
                         type: 'category',
                         labels: { rotation: -45 }
@@ -128,7 +132,7 @@
             </script>
         </div>
     </div>
-    <div class="row">
+    <div class="row order-3">
         <div class="col-md-12 mt-5">
             <h5 class="user-select-none"><i class="bi bi-grid-1x2-fill me-1"></i> Menu Utama</h5><hr>
             <div class="accordion mt-4 pt-1" id="accordionExample">
@@ -140,30 +144,50 @@
                     </h3>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body mt-1">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="user-select-none"><small class="text-muted"><i class="bi bi-dot me-1"></i> Ubah Profil 
-                                        <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
-                                    <i class="bi bi-person-bounding-box"></i></a></small></p>
+                            <div class="row text-left">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <p class="user-select-none">
+                                        <small class="text-muted">
+                                            <i class="bi bi-dot me-1"></i> Ubah Profil 
+                                            <a class="btn btn-sm btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#Modal2">
+                                                <i class="bi bi-person-bounding-box"></i>
+                                            </a>
+                                        </small>
+                                    </p>
                                 </div>
                                 @if($LogUser->role == 'admin')
-                                    <div class="col">
-                                        <p class="user-select-none"><small class="text-muted"><i class="bi bi-dot me-1"></i> Manajemen Data Pelatihan 
-                                            <a class="btn btn-sm btn-outline-primary" href="{{ url('/data-pelatihan') }}">
-                                        <i class="bi bi-clipboard-data-fill"></i></a></small></p>
-                                    </div>
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <p class="user-select-none">
+                                        <small class="text-muted">
+                                            <i class="bi bi-dot me-1"></i> Manajemen Data Pelatihan
+                                            <a class="btn btn-sm btn-outline-primary ms-2" href="{{ url('/data-pelatihan') }}">
+                                                <i class="bi bi-clipboard-data-fill"></i>
+                                            </a>
+                                        </small>
+                                    </p>
+                                </div>
                                 @endif
                                 @if($LogUser->role == 'siswa')
-                                    <div class="col">
-                                        <p class="user-select-none"><small class="text-muted"><i class="bi bi-dot me-1"></i> Data Siswa 
-                                            <a class="btn btn-sm btn-outline-primary" href="{{ url('/data-siswa') }}">
-                                        <i class="bi bi-bar-chart-steps"></i></a></small></p>
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <p class="user-select-none">
+                                            <small class="text-muted">
+                                                <i class="bi bi-dot me-1"></i> Data Siswa 
+                                                <a class="btn btn-sm btn-outline-primary ms-2" href="{{ url('/data-siswa') }}">
+                                                    <i class="bi bi-bar-chart-steps"></i>
+                                                </a>
+                                            </small>
+                                        </p>
                                     </div>
                                 @endif
-                                <div class="col">
-                                    <p class="user-select-none"><small class="text-muted"><i class="bi bi-dot me-1"></i> Info Pelatihan 
-                                        <a class="btn btn-sm btn-outline-primary" href="{{ url('/info-kegiatan') }}">
-                                    <i class="bi bi-megaphone-fill"></i></a></small></p>
+                                <div class="col-12 col-md-12 col-lg-4 mb-3">
+                                    <p class="user-select-none">
+                                        <small class="text-muted">
+                                            <i class="bi bi-dot me-1"></i> Info Pelatihan 
+                                            <a class="btn btn-sm btn-outline-primary ms-2" href="{{ url('/info-kegiatan') }}">
+                                                <i class="bi bi-megaphone-fill"></i>
+                                            </a>
+                                        </small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
