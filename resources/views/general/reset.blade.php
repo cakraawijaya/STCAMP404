@@ -1,13 +1,15 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="user-select-none"><i class="bi bi-universal-access"></i> Reset Password</h2><hr>
+    <h2 class="mt-2 mt-md-0 user-select-none">
+        <i class="bi bi-universal-access"></i> Reset Password
+    </h2><hr>
     
     @if($data)
         <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
             @csrf
             <div class="col-xl-12">
-                <div class="mt-5 col-md-6 input-sm user-select-none">
+                <div class="mt-3 mt-sm-5 col-md-6 input-sm user-select-none">
                     <label for="password"><i class="bi bi-envelope me-1"></i> Email</label>
                     <div class="input-group mb-3 mt-2">
                         <input type="email" class="form-control" value="{{ $data->email }}" disabled>

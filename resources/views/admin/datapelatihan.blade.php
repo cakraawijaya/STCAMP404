@@ -1,11 +1,13 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="user-select-none"><i class="bi bi-clipboard-data-fill me-1"></i> Manajemen Data Pelatihan</h2><hr>
-    <br class="user-select-none">
+    <h2 class="mt-3 mt-md-0 user-select-none">
+        <i class="bi bi-clipboard-data-fill me-1"></i> Manajemen Data Pelatihan
+    </h2><hr>
+
+    <div class="mt-4 pt-1 pt-md-2"><caption> Data Pelatihan Siswa STCAMP404 :</caption></div>
     <div class="table-title user-select-none">
         <div class="row">
-            <div class="col"><caption> Data Pelatihan Siswa STCAMP404 :</caption></div>
             <div class="col-sm-12 mt-4">
                 <form class="d-flex">
                     <div class="col-sm-8">

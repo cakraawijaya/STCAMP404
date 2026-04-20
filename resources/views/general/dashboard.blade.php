@@ -1,144 +1,137 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="user-select-none"><i class="bi bi-person-rolodex me-1"></i> Dashboard</h2><hr>
-    <!-- Session Alert Login -->
+    <h2 class="mt-4 mt-md-5 mt-lg-4 pt-md-2 user-select-none">
+        <i class="bi bi-person-rolodex me-1"></i> Dashboard
+    </h2><hr>
+
+    <!-- Alert Login -->
     @if ($msgLogin = Session::get('LoginNotif'))
-        <div class="alert alert-info alert-dismissible fade show mt-4 user-select-none" role="alert">
-            <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgLogin }}
-            </small>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-info alert-dismissible fade show mt-4 user-select-none">
+        <small class="text-muted">
+            <i class="bi bi-info-square-fill me-1"></i> {{ $msgLogin }}
+        </small>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
     @endif
-    <!-- Akhir Session Alert Login -->
-    <!-- Session Alert Update Profile -->
+
+    <!-- Alert Update -->
     @if ($msgUpdProf = Session::get('updateProfileNotif'))
-        <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none" role="alert">
-            <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
-                {{ $msgUpdProf }}
-            </small>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none">
+        <small class="text-muted">
+            <i class="bi bi-info-square-fill me-1"></i> {{ $msgUpdProf }}
+        </small>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
     @endif
-    <!-- Akhir Session Alert Update Profile -->
-    <br class="user-select-none">  
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col">
-                        <img src="{{ $LogUser->image }}" class="img-fluid rounded-start img-profile user-select-none" alt="gambarpengguna">
+
+    <div class="row g-4">
+        <div class="col-12 col-md-7 my-md-5 mt-5 order-1">
+            <div class="card h-100">
+                <div class="row g-0 h-100">
+
+                    <div class="col-12 col-md-7 order-1">
+                        <img src="{{ $LogUser->image }}"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-start"
+                            alt="gambarpengguna">
                     </div>
-                    <div class="col">
+
+                    <div class="col-12 col-md-5 order-2">
                         <div class="card-body">
-                            <h5 class="card-title user-select-none">Profil Pengguna</h5><hr>
+                            <h5 class="text-dark user-select-none">
+                                <strong>Profil Pengguna</strong>
+                            </h5><hr>
+
                             @if($LogUser->role == 'admin')
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-building me-1"></i> Status :</strong><br>
-                                    <span class="text-uppercase">{{ $LogUser->role }}</span>
-                                </p>
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-person me-1"></i> Nama Admin :</strong><br>
-                                    <span class="text-capitalize">{{ $LogUser->name }}</span>
-                                </p>
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-envelope me-1"></i> Email :</strong><br>
-                                    <span class="text-lowercase">{{ $LogUser->email }}</span>
-                                </p>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>Status :</strong><br>
+                                {{ strtoupper($LogUser->role) }}
+                            </small>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>Nama Admin :</strong><br>
+                                {{ ucfirst($LogUser->name) }}
+                            </small>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>Email :</strong><br>
+                                {{ strtolower($LogUser->email) }}
+                            </small>
                             @endif
+
                             @if($LogUser->role == 'siswa')
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-building me-1"></i> Nomor Induk Siswa :</strong><br>
-                                    <span class="text-lowercase">{{ $LogUser->siswa_id }}</span>
-                                </p>
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-person me-1"></i> Nama Siswa :</strong><br>
-                                    <span class="text-capitalize">{{ $LogUser->name }}</span>
-                                </p>
-                                <p class="card-text user-select-none mt-2">
-                                    <strong><i class="bi bi-envelope me-1"></i> Email :</strong><br>
-                                    <span class="text-lowercase">{{ $LogUser->email }}</span>
-                                </p>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>NIS :</strong><br>
+                                {{ $LogUser->siswa_id }}
+                            </small>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>Nama :</strong><br>
+                                {{ ucfirst($LogUser->name) }}
+                            </small>
+                            <small class="mt-2 mt-md-4 d-block">
+                                <strong>Email :</strong><br>
+                                {{ strtolower($LogUser->email) }}
+                            </small>
                             @endif
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <h5 class="user-select-none"><i class="bi bi-bar-chart-line-fill me-1"></i> Grafik Peminatan</h5><hr>
+
+        <div class="col-12 col-md-5 my-md-5 mt-5 order-2">
+            <h5 class="mb-4 user-select-none">
+                <i class="bi bi-bar-chart-line-fill me-1"></i> Grafik Peminatan
+            </h5>
             <script src="{{ url('highcharts/highcharts.js') }}"></script>
             <script src="{{ url('highcharts/exporting.js') }}"></script>
             <script src="{{ url('highcharts/export-data.js') }}"></script>
             <script src="{{ url('highcharts/accessibility.js') }}"></script>
 
-            <figure class="highcharts-figure">
-                <div id="container"></div>
-                <script>
-                    Highcharts.chart('container', {
-                        chart: {
-                            type: 'column'
-                        },
-                        title: {
-                            text: ''
-                        },
-                        subtitle: {
-                            text: ''
-                        },
-                        xAxis: {
-                            type: 'category',
-                            labels: {
-                            rotation: -45,
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                            text: '<b>PELATIHAN STCAMP404</b>'
-                            }
-                        },
-                        legend: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            pointFormat: 'Jumlah Peminat: <b>{point.y:%1f} orang</b>'
-                        },
-                        series: [{
-                            name: 'Pelatihan',
-                            data: [
-                                ['<b>Bootstrap 5</b>', {{ $Cbt }}],
-                                ['<b>Git</b>', {{ $Cgt }}],
-                                ['<b>Laravel 8</b>', {{ $Clr }}],
-                                ['<b>Codeigniter 4</b>', {{ $Cci }}]
-                            ],
-                            dataLabels: {
-                                enabled: true,
-                                rotation: -90,
-                                color: '#FFFFFF',
-                                align: 'right',
-                                format: '{point.y:%1f}', // one decimal
-                                y: 10, // 10 pixels down from the top
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        }]
-                    });
-                </script>
-            </figure>
+            <div id="container"></div>
+
+            <script>
+                Highcharts.chart('container', {
+                    chart: { type: 'column' },
+                    title: { text: '' },
+
+                    xAxis: {
+                        type: 'category',
+                        labels: { rotation: -45 }
+                    },
+
+                    yAxis: {
+                        min: 0,
+                        title: { text: 'PELATIHAN STCAMP404' }
+                    },
+
+                    legend: { enabled: false },
+
+                    tooltip: {
+                        pointFormat: 'Jumlah: <b>{point.y} orang</b>'
+                    },
+
+                    series: [{
+                        name: 'Pelatihan',
+                        data: [
+                            ['Bootstrap 5', {{ $Cbt }}],
+                            ['Git', {{ $Cgt }}],
+                            ['Laravel 8', {{ $Clr }}],
+                            ['Codeigniter 4', {{ $Cci }}]
+                        ],
+                        dataLabels: {
+                            enabled: true,
+                            rotation: -90,
+                            align: 'right'
+                        }
+                    }]
+                });
+            </script>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 mt-5">
             <h5 class="user-select-none"><i class="bi bi-grid-1x2-fill me-1"></i> Menu Utama</h5><hr>
-            <br class="user-select-none">
-            <div class="accordion" id="accordionExample">
+            <div class="accordion mt-4 pt-1" id="accordionExample">
                 <div class="accordion-item">
                     <h3 class="accordion-header" id="headingOne">
                     <button class="accordion-button user-select-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

@@ -1,7 +1,9 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="user-select-none"><i class="bi bi-person-lines-fill me-1"></i> Registrasi</h2><hr>
+    <h2 class="mt-2 mt-md-0 user-select-none">
+        <i class="bi bi-person-lines-fill me-1"></i> Registrasi
+    </h2><hr>
 
     <!-- Session Alert Register -->
     @if ($msgReg = Session::get('registerNotif'))
@@ -20,7 +22,7 @@
         <input name="siswa_id" type="hidden" value="{{ $defid + $jumlah }}">
         <input name="image" type="hidden" value="asset\img\profile\default.jpg">
         <div class="row">
-            <div class="col-md-4 mt-4 input-sm user-select-none">
+            <div class="col-md-4 mt-3 mt-sm-4 input-sm user-select-none">
                 <label for="name"><i class="bi bi-envelope me-1"></i> Nama</label>
                 <input type="text" id="name_registration" name="name" 
                 class="form-control mt-3 @error('name') is-invalid @enderror" value="{{ old('name') }}" 
@@ -87,7 +89,7 @@
             </div>
         </div>
         
-        <div class="col-md-12 mt-5 user-select-none">
+        <div class="col-md-12 mt-5 mt-sm-4 user-select-none">
             <a href="#" class="login" data-bs-toggle="modal" data-bs-target="#ModalLogin">
             Sudah Punya Akun ? Login Sekarang <i class="bi bi-patch-exclamation-fill"></i>
             </a>

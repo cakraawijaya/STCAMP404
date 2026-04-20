@@ -1,7 +1,7 @@
 @include('partials.header')
 @include('partials.navbar')
 
-<div class="container flex-grow-1 p-4 p-md-5">
+<div class="container flex-grow-1 p-3 p-md-3 p-xl-5">
     @yield('container')
 </div>
 
