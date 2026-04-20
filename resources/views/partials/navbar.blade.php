@@ -2,9 +2,9 @@
 <nav class="navbar navbar-expand-lg navbar-light mainnavcolor p-3">
   <div class="container-fluid">
     @if(Session()->has('LogSession'))
-      <a class="navbar-brand nav-link fw-bold" href="{{ url('/home') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
+      <a class="navbar-brand nav-link fw-bold user-select-none" href="{{ url('/home') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
     @else
-      <a class="navbar-brand nav-link fw-bold" href="{{ url('/') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
+      <a class="navbar-brand nav-link fw-bold user-select-none" href="{{ url('/') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
     @endif
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,18 +13,18 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         @if(Session()->has('LogSession'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/home') }}"><i class="bi bi-house-fill me-1"></i> Beranda</a>
+            <a class="nav-link user-select-none" href="{{ url('/home') }}"><i class="bi bi-house-fill me-1"></i> Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard') }}"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+            <a class="nav-link user-select-none" href="{{ url('/dashboard') }}"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
           </li>
         @endif
       </ul>
       <form class="d-flex">
         @if(Session()->has('LogSession'))
-          <a class="btn btn-primary keluar" href="{{ url('/logout') }}"><i class="bi bi-door-closed me-1"></i> Keluar</a>
+          <a class="btn btn-primary keluar user-select-none" href="{{ url('/logout') }}"><i class="bi bi-door-closed me-1"></i> Keluar</a>
         @else
-          <a class="btn btn-primary masuk" data-bs-toggle="modal" data-bs-target="#ModalLogin"><i class="bi bi-door-open me-1"></i> Masuk</a>
+          <a class="btn btn-primary masuk user-select-none" data-bs-toggle="modal" data-bs-target="#ModalLogin"><i class="bi bi-door-open me-1"></i> Masuk</a>
         @endif
       </form>
     </div>
@@ -37,7 +37,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-primary text-light">
-        <h5 class="modal-title"><i class="bi bi-door-open me-1"></i> Masuk</h5>
+        <h5 class="modal-title user-select-none"><i class="bi bi-door-open me-1"></i> Masuk</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -45,7 +45,7 @@
           @csrf
 
           <!-- EMAIL -->
-          <div class="mb-3">
+          <div class="mb-3 user-select-none">
             <label class="form-label">
               <i class="bi bi-envelope me-1"></i> Email
             </label>
@@ -57,7 +57,7 @@
               required>
 
             @error('email_login')
-              <div class="text-danger small mt-1">
+              <div class="text-danger small mt-1 user-select-none">
                 <i class="bi bi-exclamation-triangle-fill me-1"></i>
                 Email salah / belum terdaftar di sistem !
               </div>
@@ -65,7 +65,7 @@
           </div>
 
           <!-- PASSWORD -->
-          <div class="mb-2">
+          <div class="mb-2 user-select-none">
             <label class="form-label">
               <i class="bi bi-key me-1"></i> Kata Sandi
             </label>
@@ -82,7 +82,7 @@
             </div>
 
             @error('password_login')
-              <div class="text-danger small mt-1">
+              <div class="text-danger small mt-1 user-select-none">
                 <i class="bi bi-exclamation-triangle-fill me-1"></i>
                 Password salah !
               </div>
@@ -91,14 +91,14 @@
 
           <div class="d-flex justify-content-between align-items-center mt-4">
 
-            <div class="form-check m-0">
+            <div class="form-check m-0 user-select-none">
               <input class="form-check-input" type="checkbox" id="remember" name="remember">
               <label class="form-check-label" for="remember">
                 Ingat saya
               </label>
             </div>
 
-            <a class="lupas" href="{{ url('/forgot-password') }}">
+            <a class="lupas user-select-none" href="{{ url('/forgot-password') }}">
               Lupa Password <i class="bi bi-patch-question"></i>
             </a>
 

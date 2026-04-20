@@ -125,6 +125,23 @@ td {
     font-size: 18px;
 }
 
+.footer-custom .sosmed ul li a {
+    display: inline-block;
+}
+
+.footer-custom .sosmed ul li a i {
+    display: inline-block;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.footer-custom .sosmed ul li a:hover i {
+    transform: scale(1.2);
+}
+
+.footer-custom .sosmed:hover {
+    cursor: pointer;
+}
+
 .serif {
     font-family: Times, "Times New Roman", Georgia, serif;
 }

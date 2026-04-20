@@ -1,17 +1,17 @@
 @extends('layout.main')
 
 @section('container')
-    <h2><i class="bi bi-patch-question"></i> Lupa Password</h2><hr>
+    <h2 class="user-select-none"><i class="bi bi-patch-question"></i> Lupa Password</h2><hr>
 
     <form class="form-group row" action="{{ url('/forgetProcess') }}" method="POST">
         @csrf
         <div class="col-xl-12">
-            <div class="col-md-6 mt-4 input-sm">
+            <div class="col-md-6 mt-4 input-sm user-select-none">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" name="email" class="form-control mt-3 @error('email_forget') is-invalid @enderror" 
                 value="{{ old('email') }}" placeholder="Masukan email anda..." required autocomplete="email" autofocus>
                 @error('email_forget')
-                    <span class="text-danger invalid-feedback" role="alert">
+                    <span class="text-danger invalid-feedback user-select-none" role="alert">
                         <i class="bi bi-exclamation-triangle-fill mr-1"></i>
                         <strong> Email salah / belum terdaftar di sistem !</strong>
                     </span>

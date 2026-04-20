@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('container')
-    <h2><i class="bi bi-universal-access"></i> Reset Password</h2><hr>
+    <h2 class="user-select-none"><i class="bi bi-universal-access"></i> Reset Password</h2><hr>
     
     @if($data)
         <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
             @csrf
             <div class="col-xl-12">
-                <div class="mt-5 col-md-6 input-sm">
+                <div class="mt-5 col-md-6 input-sm user-select-none">
                     <label for="password"><i class="bi bi-envelope me-1"></i> Email</label>
                     <div class="input-group mb-3 mt-2">
                         <input type="email" class="form-control" value="{{ $data->email }}" disabled>
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 mt-2 input-sm me-4">
+                <div class="col-md-3 mt-2 input-sm me-4 user-select-none">
                     <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
@@ -26,7 +26,7 @@
                         class="form-control @error('password') is-invalid @enderror" 
                         placeholder="Masukan kata sandi baru..." required autofocus>
                         @error('password')
-                            <span class="text-danger invalid-feedback" role="alert">
+                            <span class="text-danger invalid-feedback user-select-none" role="alert">
                                 <i class="bi bi-exclamation-triangle-fill mr-1"></i>
                                 @if($errors->first('password') == 'error')
                                     <strong>Gunakan password terbaru !</strong>
@@ -37,8 +37,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-md-3 mt-2 input-sm">
-                    <label for="password-confirm"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
+                <div class="col-md-3 mt-2 input-sm user-select-none">
+                    <label for="password-confirm user-select-none"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
@@ -47,7 +47,7 @@
                         class="form-control @error('password_confirmation') is-invalid @enderror" 
                         placeholder="Konfirmasi kata sandi baru..." required>
                         @error('password_confirmation')
-                            <span class="text-danger invalid-feedback" role="alert">
+                            <span class="text-danger invalid-feedback user-select-none" role="alert">
                                 <i class="bi bi-exclamation-triangle-fill mr-1"></i>
                                 <strong>Konfirmasi password tidak cocok !</strong>
                             </span>

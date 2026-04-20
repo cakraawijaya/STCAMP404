@@ -1,8 +1,9 @@
 @extends('layout.main')
 
 @section('container')
-    <h2><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</h2><hr><br>
-    <div class="table-title">
+    <h2 class="user-select-none"><i class="bi bi-bar-chart-steps me-1"></i> Data Siswa</h2>
+    <hr><br class="user-select-none">
+    <div class="table-title user-select-none">
         <div class="row">
             <div class="col"><caption> Data Pelatihan Anda :</caption></div>
             <div class="col-sm-12 mt-4">
@@ -18,7 +19,7 @@
 
     <!-- Session Alert Siswa -->
     @if ($msgSiswa = Session::get('addSiswaNotif'))
-        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
                 {{ $msgSiswa }}
             </small>
@@ -26,7 +27,7 @@
         </div>
     @endif
     @if ($msgerrSiswa = Session::get('erroraddSiswaNotif'))
-        <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show mt-4 user-select-none" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
                 {{ $msgerrSiswa }}
             </small>
@@ -34,11 +35,11 @@
         </div>
     @endif
     <!-- Akhir Session Alert Siswa -->
-    <br>
+    <br class="user-select-none">
 
     <table class="table table-striped table-hover table-bordered caption-top mt-3 col-sm-12 table-responsive">
         <thead class="table-success">
-            <tr>
+            <tr class="user-select-none">
                 <th scope="col">Nomor Induk Siswa</th>
                 <th scope="col">Pelatihan yang diikuti</th>
                 <th scope="col">Waktu Daftar</th>
@@ -54,7 +55,9 @@
             @endforeach
         </tbody>
     </table>
-    {{ $value->links() }}
+    <div class="user-select-none mt-4">
+        {{ $value->links() }}
+    </div>
 
 
     <!-- Pop Up Modal Add-->
@@ -62,23 +65,23 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-light">
-                    <h5 class="modal-title"><i class="bi bi-person-plus-fill me-1"></i> Daftar Pelatihan</h5>
+                    <h5 class="modal-title user-select-none"><i class="bi bi-person-plus-fill me-1"></i> Daftar Pelatihan</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="row g-2" action="{{ url('/data-siswa/add') }}" method="POST">
                       @csrf
-                      <div class="col-md-12 mt-3">
+                      <div class="col-md-12 mt-3 user-select-none">
                         <label for="AddName"><i class="bi bi-building me-1"></i> Nomor Induk Siswa</label>
                         <input type="text" class="form-control mt-2" value="{{ $v->nis }}" disabled>
                         <input type="hidden" name="siswa_id" required>
                       </div>
-                      <div class="col-md-12 mt-4">
+                      <div class="col-md-12 mt-4 user-select-none">
                         <label for="AddName"><i class="bi bi-person me-1"></i> Nama Pengguna</label>
                         <input type="text" class="form-control mt-2" name="name" value="{{ $v->nama_siswa }}" disabled>
                         <input type="hidden" name="name" required>
                       </div>  
-                      <div class="col-md-12 mt-4">
+                      <div class="col-md-12 mt-4 user-select-none">
                         <label for="AddExercise"><i class="bi bi-award me-1"></i> Pelatihan</label>
                         <div class="input-group mb-3 mt-2">
                             <label class="input-group-text" for="AddExercise">
