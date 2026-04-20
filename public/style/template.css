@@ -3,6 +3,10 @@
     background-color: skyblue;
 }
 
+.title-web {
+    line-height: 2.5rem;
+}
+
 .modal-content {
     overflow: hidden;
     border-radius: 10px;
@@ -13,10 +17,19 @@
     border-top: none;
 }
 
+.hover-shadow {
+    transition: all 0.3s ease-in-out;
+    will-change: transform, box-shadow;
+}
+
 .hover-shadow:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     transition: 0.3s;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
 }
 
 input::placeholder, .lupas, .login {
@@ -56,6 +69,26 @@ input::placeholder, .lupas, .login {
 .text-sm {
     font-size: small;
 }
+
+.card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: 100%;
+}
+
+.card-title {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.card-body {
+    overflow: hidden;
+}
+
 .card-text, .accordion-body {
     text-align: justify;
 }
@@ -63,6 +96,7 @@ input::placeholder, .lupas, .login {
 .card-img-top{
     height: 190px;
     width: auto;
+    object-fit: cover;
 }
 
 td{

@@ -26,9 +26,9 @@
 
 
     <!-- Jumbotron -->
-    <div class="jumbotron text-center">
-        <h1 class="card-title">STCAMP404 (Sekolah Tinggi CAMP404)</h5>
-        <p class="card-text pt-5 pb-3">Lembaga Pendidikan ini memberikan pelatihan gratis pada bidang teknologi. 
+    <div class="text-center">
+        <h1 class="title-web">STCAMP404 (Sekolah Tinggi CAMP404)</h5>
+        <p class="descriptions pt-4 pb-3">Lembaga Pendidikan ini memberikan pelatihan gratis pada bidang teknologi. 
             Siswa yang telah bergabung lebih dari 1000 orang yang tersebar di seluruh Indonesia.
             Pembelajaran akan slalu kami update menyesuaikan kebutuhan industri saat ini.
             Jadi tunggu apa lagi ??
@@ -59,53 +59,53 @@
     <!-- Jumbotron Akhir -->
 
     <!-- Card -->
-    <div class="row row-cols-1 row-cols-md-2 g-4 mt-5 d-flex align-items-stretch">
-        <div class="col-md-3">
-            <div class="card h-100 border bg-transparent shadow-sm hover-shadow">
+    <div class="row g-4 mt-5 align-items-stretch">
+        <div class="col-md-3 d-flex py-2">
+            <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic1.jpg') }}" class="card-img-top" alt="codeigniter4">
-                <div class="card-title bg-card-title text-dark p-3">
-                    <h5 class="card-title text-center"><strong>Pelatihan Codeigniter 4</strong></h5>
+                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                    <h5 class="card-title text-center"><strong>PELATIHAN CODEIGNITER 4</strong></h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body flex-grow-1">
                     <p class="card-text">Codeigniter merupakan salah satu framework PHP terpopuler untuk membangun website. Framework ini berfokus 
                         pada pengolahan backend website. Codeigniter terus melakukan pengembangan hingga saat ini telah muncul versi Codeigniter 4. 
                         Dengan menggunakan fitur dalam Codeigniter, pengembangan website akan jauh lebih mudah.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card h-100 border bg-transparent shadow-sm hover-shadow">
+        <div class="col-md-3 d-flex py-2">
+            <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic2.jpg') }}" class="card-img-top" alt="laravel8">
-                <div class="card-title bg-card-title text-dark p-3">
-                    <h5 class="card-title text-center"><strong>Pelatihan Laravel 8</strong></h5>
+                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                    <h5 class="card-title text-center"><strong>PELATIHAN LARAVEL 8</strong></h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body flex-grow-1">
                     <p class="card-text">Laravel merupakan salah satu framework PHP terpopuler untuk membangun website. Framework ini berfokus 
                         pada pengolahan backend website. Laravel terus melakukan pengembangan hingga saat ini telah muncul versi Laravel 8. 
                         Dengan menggunakan fitur dalam Laravel, pengembangan website akan jauh lebih mudah.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card h-100 border bg-transparent shadow-sm hover-shadow">
+        <div class="col-md-3 d-flex py-2">
+            <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic3.jpg') }}" class="card-img-top" alt="bootstrap5">
-                <div class="card-title bg-card-title text-dark p-3">
-                    <h5 class="card-title text-center"><strong>Pelatihan Bootstrap 5</strong></h5>
+                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                    <h5 class="card-title text-center"><strong>PELATIHAN BOOTSTRAP 5</strong></h5>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body flex-grow-1">
                     <p class="card-text">Bootstrap adalah salah satu framework front-end website terbaik yang cepat dan ringan.
                         Dengan Bootstrap ini, programmer tidak perlu menulis kode CSS yang panjang, karena bisa langsung menggunakan semua elemen yang telah disediakan.
                         Bootstrap terus melakukan pengembangan hingga saat ini telah muncul versi Bootstrap 5. </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card h-100 border bg-transparent shadow-sm hover-shadow">
+        <div class="col-md-3 d-flex py-2">
+            <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic4.jpg') }}" class="card-img-top" alt="git">
-                <div class="card-title bg-card-title text-dark p-3">
-                    <h5 class="card-title text-center"><strong>Pelatihan Git</strong></h5>
+                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                    <h5 class="card-title text-center"><strong>PELATIHAN GIT</strong></h5>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body flex-grow-1">
                     <p class="card-text">GIT (Group Inclusive Tour) adalah sebuah tools penting bagi para programmer dan developer yang berfungsi sebagai control system untuk 
                         menjalankan proyek pengembangan software. Git diciptakan oleh Linus Torvalds, sedangkan desain Git terinspirasi dari tools yang bernama BitKeeper dan Monotone.</p>
                 </div>
