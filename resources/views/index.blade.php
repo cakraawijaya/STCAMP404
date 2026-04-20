@@ -59,8 +59,8 @@
     <!-- Jumbotron Akhir -->
 
     <!-- Card -->
-    <div class="row g-4 mt-5 align-items-stretch">
-        <div class="col-md-3 d-flex py-2">
+    <div class="row g-3 g-md-4 mt-5 align-items-stretch">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic1.jpg') }}" class="card-img-top" alt="codeigniter4">
                 <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 d-flex py-2">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic2.jpg') }}" class="card-img-top" alt="laravel8">
                 <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 d-flex py-2">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic3.jpg') }}" class="card-img-top" alt="bootstrap5">
                 <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 d-flex py-2">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic4.jpg') }}" class="card-img-top" alt="git">
                 <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">

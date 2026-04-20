@@ -1,20 +1,13 @@
-/* Navbar */
-.mainnavcolor, .bg-card-title {
-    background-color: skyblue;
-}
-
-.title-web {
-    line-height: 2.5rem;
-}
-
-.modal-content {
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.modal-footer {
+html, body {
+    height: 100%;
     margin: 0;
-    border-top: none;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .hover-shadow {
@@ -26,29 +19,6 @@
     transform: translateY(-8px);
     transition: 0.3s;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    -webkit-transform: translateY(-8px);
-    -moz-transform: translateY(-8px);
-    -ms-transform: translateY(-8px);
-    -o-transform: translateY(-8px);
-}
-
-input::placeholder, .lupas, .login {
-    font: 14px sans-serif;
-    text-decoration: none;
-}
-
-.navbar-collapse{
-    padding-left: 5%;
-}
-
-.nav-item{
-    margin-right: 20px;
-}
-
-.nav-link:hover, .masuk, 
-.btn-ik, .btn-ds, .btncancel, 
-.btnacc, .keluar{
-    font-weight: 500;
 }
 
 .btn-danger, .btn-outline-danger {
@@ -59,15 +29,47 @@ input::placeholder, .lupas, .login {
     color: white !important;
 }
 
+input::placeholder, .lupas, .login {
+    font: 14px sans-serif;
+    text-decoration: none;
+}
+
+.mainnavcolor, .bg-card-title {
+    background-color: skyblue;
+}
+
+.navbar-collapse {
+    padding-left: 5%;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link:hover, .masuk, 
+.btn-ik, .btn-ds, .btncancel, 
+.btnacc, .keluar {
+    font-weight: 500;
+}
+
+.title-web {
+    line-height: 2.5rem;
+}
+
 .special-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-/* Content */
-.text-sm {
-    font-size: small;
+.modal-content {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.modal-footer {
+    margin: 0;
+    border-top: none;
 }
 
 .card {
@@ -93,22 +95,36 @@ input::placeholder, .lupas, .login {
     text-align: justify;
 }
 
-.card-img-top{
+.card-img-top {
     height: 190px;
     width: auto;
     object-fit: cover;
 }
 
-td{
+td {
     font-size: 14px;
 }
 
-/* Footer */
-.footercontainer{
-    padding: 20px 50px 20px 50px;
+.footer-custom {
+    background-color: skyblue;
+    color: black;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Font Options */
+.footer-address {
+    font-size: 12px;
+    color: white;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.footer-brand, .sosmed {
+    font-size: 18px;
+}
+
 .serif {
     font-family: Times, "Times New Roman", Georgia, serif;
 }
@@ -141,8 +157,7 @@ td{
     font-family: fangsong;
 }
 
-/* Profile */
-.img-profile{
+.img-profile {
     min-height: 17em;
     max-height: 17em;
     max-width: auto;

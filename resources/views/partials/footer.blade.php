@@ -1,28 +1,42 @@
     <!-- Footer -->
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-success p-5 mt-5">
-        <div class="col-md-5 d-flex align-items-center">
-            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1 btn disabled">
-                <i class="bi bi-book-half"></i>
-            </a>
-            <span class="text-muted monospace">© 2022 STCAMP404 | All Rights Reserved</span>
+    <footer class="footer-custom mt-5">
+        <div class="container py-4">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="footer-brand col-12 col-md-6 mb-3 mb-md-0 d-flex flex-md-row 
+                align-items-center justify-content-center justify-content-md-start gap-2">
+                    <a href="#" class="text-muted text-decoration-none disabled d-none d-md-flex">
+                        <i class="bi bi-book-half text-dark"></i>
+                    </a>
+                    <span class="text-dark small">
+                        Sekolah Tinggi CAMP404
+                    </span>
+                </div>
+                <div class="sosmed col-12 col-md-6">
+                    <ul class="nav justify-content-center justify-content-md-end gap-3">
+                        <li class="mx-2">
+                            <a href="#" class="text-muted" id="ToastDefault1">
+                                <i class="bi bi-twitter text-dark"></i>
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" class="text-muted" id="ToastDefault2">
+                                <i class="bi bi-instagram text-dark"></i>
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" class="text-muted" id="ToastDefault3">
+                                <i class="bi bi-facebook text-dark"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a type="submit" class="text-muted" id="ToastDefault1">
-                <i class="bi bi-twitter"></i>
-            </a></li>
-            <li class="ms-3"><a type="submit" class="text-muted" id="ToastDefault2">
-                <i class="bi bi-instagram"></i>
-            </a></li>
-            <li class="ms-3"><a type="submit" class="text-muted" id="ToastDefault3">
-                <i class="bi bi-facebook"></i>
-            </a></li>
-        </ul>
-        <div class="col-md-5 d-flex align-items-center mt-1">
-            Jl. Gunung Anyar, No. 28, Surabaya, Jawa Timur
+        <div class="footer-address bg-primary text-center p-4 p-sm-3">
+            © 2022 STCAMP404. All Rights Reserved | Alamat: Jl. Mampang Prapatan Raya, No. 73A Lantai 3, Jakarta Selatan 12790
         </div>
     </footer>
-    <!-- Footer Akhir -->
+    <!-- Akhir Footer -->
 
     <!-- Toast 1 -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
