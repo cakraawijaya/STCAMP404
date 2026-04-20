@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-md-3 mt-2 input-sm me-4 user-select-none">
-                    <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
+                    <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi Baru</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 mt-2 input-sm user-select-none">
-                    <label for="password-confirm user-select-none"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
+                    <label for="password-confirm user-select-none"><i class="bi bi-key me-1"></i> Konfirmasi Sandi Baru</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
                         <i class="bi bi-eye-fill"></i>

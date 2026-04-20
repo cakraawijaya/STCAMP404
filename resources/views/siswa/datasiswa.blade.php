@@ -57,7 +57,7 @@
             @else
                 <tr>
                     <td colspan="3" class="p-4 text-center align-middle user-select-none">
-                        Belum ada data pelatihan
+                        Data tidak ditemukan....
                     </td>
                 </tr>
             @endif

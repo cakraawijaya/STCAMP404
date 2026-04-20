@@ -59,12 +59,12 @@
     <!-- Jumbotron Akhir -->
 
     <!-- Card -->
-    <div class="row g-3 g-md-4 mt-5 align-items-stretch">
+    <div class="row g-3 g-md-4 mt-5 d-flex align-items-stretch">
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic1.jpg') }}" class="card-img-top user-select-none" alt="codeigniter4">
-                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
-                    <h5 class="card-title text-center user-select-none"><strong>PELATIHAN CODEIGNITER 4</strong></h5>
+                <div class="card-header text-dark d-flex align-items-center justify-content-center user-select-none">
+                    <strong class="text-center flex-grow-1">PELATIHAN CODEIGNITER 4</strong>
                 </div>
                 <div class="card-body flex-grow-1">
                     <p class="card-text user-select-none">Codeigniter merupakan salah satu framework PHP terpopuler untuk membangun website. Framework ini berfokus 
@@ -76,8 +76,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic2.jpg') }}" class="card-img-top user-select-none" alt="laravel8">
-                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
-                    <h5 class="card-title text-center user-select-none"><strong>PELATIHAN LARAVEL 8</strong></h5>
+                <div class="card-header text-dark d-flex align-items-center justify-content-center user-select-none">
+                    <strong class="text-center flex-grow-1">PELATIHAN LARAVEL 8</strong>
                 </div>
                 <div class="card-body flex-grow-1">
                     <p class="card-text user-select-none">Laravel merupakan salah satu framework PHP terpopuler untuk membangun website. Framework ini berfokus 
@@ -89,8 +89,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic3.jpg') }}" class="card-img-top user-select-none" alt="bootstrap5">
-                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
-                    <h5 class="card-title text-center user-select-none"><strong>PELATIHAN BOOTSTRAP 5</strong></h5>
+                <div class="card-header text-dark d-flex align-items-center justify-content-center user-select-none">
+                    <strong class="text-center flex-grow-1">PELATIHAN BOOTSTRAP 5</strong>
                 </div>
                 <div class="card-body flex-grow-1">
                     <p class="card-text user-select-none">Bootstrap adalah salah satu framework front-end website terbaik yang cepat dan ringan.
@@ -102,8 +102,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-flex py-2">
             <div class="card border bg-transparent shadow-sm hover-shadow w-100 h-100 d-flex flex-column">
                 <img src="{{ url('asset/img/content/pic4.jpg') }}" class="card-img-top user-select-none" alt="git">
-                <div class="card-title bg-card-title text-dark p-3 d-flex align-items-center justify-content-center flex-shrink-0">
-                    <h5 class="card-title text-center user-select-none"><strong>PELATIHAN GIT</strong></h5>
+                <div class="card-header text-dark d-flex align-items-center justify-content-center user-select-none">
+                    <strong class="text-center flex-grow-1">PELATIHAN GIT</strong>
                 </div>
                 <div class="card-body flex-grow-1">
                     <p class="card-text user-select-none">GIT (Group Inclusive Tour) adalah sebuah tools penting bagi para programmer dan developer yang berfungsi sebagai control system untuk 
