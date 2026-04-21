@@ -22,8 +22,7 @@ class AdminController extends Controller
         if (Session::has('adminAccess')) {
             // Session::pull('LogSession');
             Session::pull('siswaAccess');
-            $NIS = $this->db->distinct()->get(['nis']);
-            $NAMA = $this->db->distinct()->get(['nama_siswa']);
+            $NIS = $this->dbu->where('role', 'siswa')->whereNotNull('siswa_id')->get(['siswa_id', 'name']);
             $PEL = $this->dbl->distinct()->get(['nama_pelatihan']);
             if($reqdata->has('search')){
                 $search = $this->db->where('nis','LIKE','%'.$reqdata->search.'%')->orWhere('nama_siswa', 'LIKE', '%'.$reqdata->search.'%')->orWhere('pelatihan', 'LIKE', '%'.$reqdata->search.'%')->orWhere('created_at', 'LIKE', '%' . $reqdata->search . '%');
@@ -31,7 +30,6 @@ class AdminController extends Controller
                 $data = [
                     'data' => $searchData,
                     'NIS' => $NIS,
-                    'NAMA' => $NAMA,
                     'PEL' => $PEL
                 ];
             } else{
@@ -39,7 +37,6 @@ class AdminController extends Controller
                 $data = [
                     'data' => $readDB,
                     'NIS' => $NIS,
-                    'NAMA' => $NAMA,
                     'PEL' => $PEL
                 ];
             }

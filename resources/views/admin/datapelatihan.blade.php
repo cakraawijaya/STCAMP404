@@ -127,25 +127,28 @@
                         <div class="col-md-12 mt-2 user-select-none">
                             <label for="CreateNIS"><i class="bi bi-building me-1"></i> Nomor Induk Siswa</label>
                             <div class="input-group mb-3 mt-2">
-                                <select type="number" class="form-select text-sm" name="nis" id="CreateNIS">
+                                <select class="form-select text-sm" name="nis" id="CreateNIS" required>
+                                    <option value="" selected disabled>-- Pilih NIS --</option>
                                     @foreach($NIS as $val)
-                                        <option value="{{ $val->nis }}" selected class="text-sm">{{ $val->nis }}</option>
+                                        <option value="{{ $val->siswa_id }}">
+                                            {{ $val->siswa_id }} - {{ $val->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-                        @foreach($NAMA as $val)
-                            <input type="hidden" name="nama_siswa" value="{{ $val->nama_siswa }}">
-                        @endforeach
                         <div class="col-md-12 mt-4 user-select-none">
                             <label for="exampleCreateCamp"><i class="bi bi-award me-1"></i> Pelatihan</label>
                             <div class="input-group mb-3 mt-2">
                                 <label class="input-group-text" for="inputGroupSelect01">
                                     <small class="text-sm">Opsi:</small>
                                 </label>
-                                <select class="form-select text-sm" name="pelatihan" id="inputGroupSelect01">
+                                <select class="form-select text-sm" name="pelatihan" id="inputGroupSelect01" required>
+                                    <option value="" selected disabled>-- Pilih Pelatihan --</option>
                                     @foreach($PEL as $val)
-                                        <option value="{{ $val->nama_pelatihan }}" selected class="text-sm">{{ $val->nama_pelatihan }}</option>
+                                        <option value="{{ $val->nama_pelatihan }}">
+                                            {{ $val->nama_pelatihan }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -183,9 +186,13 @@
                                 <label class="input-group-text" for="UpdateDataPel">
                                     <small class="text-sm">Opsi Ubah:</small>
                                 </label>
-                                <select class="form-select text-sm" name="pelatihan" id="UpdateDataPel">
+                                <select class="form-select text-sm" name="pelatihan" id="UpdateDataPel" required>
+                                    <option value="" disabled>-- Pilih Pelatihan --</option>
                                     @foreach($PEL as $val)
-                                        <option value="{{ $val->nama_pelatihan }}" selected class="text-sm">{{ $val->nama_pelatihan }}</option>
+                                        <option value="{{ $val->nama_pelatihan }}"
+                                            {{ $v->pelatihan == $val->nama_pelatihan ? 'selected' : '' }}>
+                                            {{ $val->nama_pelatihan }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
