@@ -2,11 +2,12 @@
 <nav class="navbar navbar-expand-lg navbar-light mainnavcolor p-3 mb-3 pb-2">
   <div class="container-fluid">
 
-    <a class="navbar-brand fw-bold me-lg-5 user-select-none" href="{{ url('/') }}">
-      <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
-    </a>
     @if(Session()->has('LogSession'))
       <a class="navbar-brand fw-bold me-lg-5 user-select-none" onclick="openLink('#')">
+        <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
+      </a>
+    @else
+      <a class="navbar-brand fw-bold me-lg-5 user-select-none" href="{{ url('/') }}">
         <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
       </a>
     @endif

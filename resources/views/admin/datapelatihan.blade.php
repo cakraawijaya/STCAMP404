@@ -1,28 +1,27 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="mt-3 mt-md-0 user-select-none">
+    <h2 class="mt-3 mt-md-0 lh-lg user-select-none">
         <i class="bi bi-clipboard-data-fill me-1"></i> Manajemen Data Pelatihan
     </h2><hr>
 
     <div class="mt-4 pt-1 pt-md-2"><caption> Data Pelatihan Siswa STCAMP404 :</caption></div>
-    <div class="table-title user-select-none">
-        <div class="row">
-            <div class="col-sm-12 mt-4">
-                <form class="d-flex">
-                    <div class="col-sm-8">
-                        <a class="btn btn-outline-info text-dark me-2" role="group" data-bs-toggle="modal" data-bs-target="#ModalCreate"><i class="bi bi-person-plus-fill me-1"></i> Tambah</a>
-                        <a class="btn btn-outline-info text-dark" role="group" href="{{ url('/data-pelatihan') }}"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</a>
-                    </div>
-                    <form action="{{ url('/data-pelatihan') }}" method="GET">
-                        <input class="form-control me-2" type="search" name="search" placeholder="Cari Data Siswa...." aria-label="Search">
-                        <button type="submit" class="btn btn-info btn-group" role="group"><i class="bi bi-search me-1"></i> Cari</button>
-                    </form>
-                </form>
-            </div>
+    <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3 mt-4 pt-2">
+        <div class="d-flex gap-4">
+            <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" data-bs-toggle="modal" data-bs-target="#ModalCreate">
+                <i class="bi bi-person-plus-fill me-1"></i> Daftar
+            </a>
+            <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" href="{{ url('/data-pelatihan') }}">
+                <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+            </a>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-3 ms-md-auto mt-4 mt-md-0">
+            <input class="form-control text-center text-md-start" type="search" name="search" placeholder="Cari Data Siswa....">
+            <button type="submit" class="btn btn-info d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start">
+                <i class="bi bi-search me-1"></i> Cari
+            </button>
         </div>
     </div>
-
 
     <!-- Session Alert Admin -->
     @if ($msgAdmin = Session::get('addAdminNotif'))
@@ -64,52 +63,54 @@
             </small>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
-    <br class="user-select-none">    
+    @endif    
     <!-- Akhir Session Alert Admin -->
 
-
-    <table class="table table-striped table-hover table-bordered caption-top mt-3 col-sm-12 table-responsive">
-        <thead class="table-success">
-            <tr class="user-select-none">
-                <th scope="col">Nomor Induk Siswa</th>
-                <th scope="col">Nama Siswa</th>
-                <th scope="col">Ambil Pelatihan</th>
-                <th scope="col">Dibuat</th>
-                <th scope="col">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if($data->count() > 0)
-                @foreach($data as $v)
-                <tr>
-                    <td class="p-2 align-middle">{{ $v->nis }}</td>
-                    <td class="p-2 align-middle">{{ $v->nama_siswa }}</td>
-                    <td class="p-2 align-middle">{{ $v->pelatihan }}</td>
-                    <td class="p-2 align-middle">{{ $v->updated_at->format('d:m:Y s:i:H') }}</td>
-                    <td>
-                        <div class="d-grid gap-2 p-2 align-middle user-select-none">
-                            <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
-                                <i class="bi bi-pencil-square me-1"></i> Ubah
-                            </a>
-                            <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
-                                <i class="bi bi-trash3 me-1"></i> Hapus
-                            </a>
-                        </div>
-                    </td>
+    <div class="table-responsive mt-4">
+        <table class="table table-striped table-hover table-bordered caption-top align-middle">
+            <thead class="table-success">
+                <tr class="user-select-none">
+                    <th scope="col">Nomor Induk Siswa</th>
+                    <th scope="col">Nama Siswa</th>
+                    <th scope="col">Ambil Pelatihan</th>
+                    <th scope="col">Dibuat</th>
+                    <th scope="col">Aksi</th>
                 </tr>
-                @endforeach
-            @else
-                <tr>
-                    <td colspan="5" class="p-4 text-center align-middle user-select-none">
-                        Data tidak ditemukan....
-                    </td>
-                </tr>
-            @endif
-        </tbody>
-    </table>
-    <div class="user-select-none mt-4 pt-2">
-        {{ $data->links() }}
+            </thead>
+            <tbody>
+                @if($data->count() > 0)
+                    @foreach($data as $v)
+                    <tr>
+                        <td class="p-2 align-middle">{{ $v->nis }}</td>
+                        <td class="p-2 align-middle">{{ $v->nama_siswa }}</td>
+                        <td class="p-2 align-middle">{{ $v->pelatihan }}</td>
+                        <td class="p-2 align-middle">{{ $v->updated_at->format('d:m:Y s:i:H') }}</td>
+                        <td>
+                            <div class="d-grid gap-2 p-2 align-middle user-select-none">
+                                <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">
+                                    <i class="bi bi-pencil-square me-1"></i> Ubah
+                                </a>
+                                <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalDelete-{{ $v->id }}">
+                                    <i class="bi bi-trash3 me-1"></i> Hapus
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="5" class="p-4 text-center align-middle user-select-none">
+                            Data tidak ditemukan....
+                        </td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center justify-content-md-start mt-4">
+        <div class="pagination-wrapper overflow-auto">
+            {{ $data->links() }}
+        </div>
     </div>
 
     <!-- Pop Up Modal Create-->

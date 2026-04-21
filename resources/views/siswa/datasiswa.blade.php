@@ -6,12 +6,12 @@
     </h2><hr>
 
     <div class="mt-4 pt-1 pt-md-2"><caption> Data Pelatihan Anda :</caption></div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mt-4">
-        <div class="d-flex flex-row flex-wrap gap-3 mt-4 align-items-stretch">
-            <a class="btn btn-outline-info text-dark flex-fill text-center" data-bs-toggle="modal" data-bs-target="#ModalAdd">
+    <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3 mt-4 pt-2">
+        <div class="d-flex gap-4">
+            <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" data-bs-toggle="modal" data-bs-target="#ModalAdd">
                 <i class="bi bi-person-plus-fill me-1"></i> Daftar
             </a>
-            <a class="btn btn-outline-info text-dark flex-fill text-center" href="{{ url('/data-siswa') }}">
+            <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" href="{{ url('/data-siswa') }}">
                 <i class="bi bi-arrow-clockwise me-1"></i> Refresh
             </a>
         </div>
@@ -64,7 +64,7 @@
             </tbody>
         </table>
     </div>
-    <div class="d-flex mt-4">
+    <div class="d-flex justify-content-center justify-content-md-start mt-4">
         <div class="pagination-wrapper overflow-auto">
             {{ $value->links() }}
         </div>
