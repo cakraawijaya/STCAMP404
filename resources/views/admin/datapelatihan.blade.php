@@ -15,12 +15,12 @@
                 <i class="bi bi-arrow-clockwise me-1"></i> Refresh
             </a>
         </div>
-        <div class="d-flex flex-column flex-md-row gap-3 ms-md-auto mt-4 mt-md-0">
+        <form action="{{ url('/data-pelatihan') }}" method="GET" class="d-flex flex-column flex-md-row gap-3 ms-md-auto mt-4 mt-md-0">
             <input class="form-control text-center text-md-start" type="search" name="search" placeholder="Cari Data Siswa....">
             <button type="submit" class="btn btn-info d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start">
                 <i class="bi bi-search me-1"></i> Cari
             </button>
-        </div>
+        </form>
     </div>
 
     <!-- Session Alert Admin -->
