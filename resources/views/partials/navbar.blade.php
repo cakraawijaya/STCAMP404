@@ -1,32 +1,53 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light mainnavcolor p-3">
   <div class="container-fluid">
-    @if(Session()->has('LogSession'))
-      <a class="navbar-brand nav-link fw-bold user-select-none" href="{{ url('/home') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
-    @else
-      <a class="navbar-brand nav-link fw-bold user-select-none" href="{{ url('/') }}"><i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}</a>
-    @endif
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+
+    <a class="navbar-brand fw-bold me-lg-5 user-select-none" onclick="openLink('#')">
+      <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
+    </a>
+
+    {{-- Toggle --}}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+    {{-- Menu --}}
+    <div class="collapse navbar-collapse mt-4 mt-lg-0 mb-3 mb-lg-0 px-0" id="navbarScroll">
+
+      {{-- Left Menu --}}
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @if(Session()->has('LogSession'))
           <li class="nav-item">
-            <a class="nav-link user-select-none" href="{{ url('/home') }}"><i class="bi bi-house-fill me-1"></i> Beranda</a>
+            <a class="nav-link user-select-none" href="{{ url('/home') }}">
+              <i class="bi bi-house-fill me-1"></i> Beranda
+            </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link user-select-none" href="{{ url('/dashboard') }}"><i class="bi bi-person-rolodex me-1"></i> Dashboard</a>
+            <a class="nav-link user-select-none" href="{{ url('/dashboard') }}">
+              <i class="bi bi-person-rolodex me-1"></i> Dashboard
+            </a>
           </li>
         @endif
       </ul>
-      <form class="d-flex">
+
+      {{-- Right Button --}}
+      <div class="d-flex align-items-lg-center mt-2 mt-lg-0">
+
         @if(Session()->has('LogSession'))
-          <a class="btn btn-primary keluar user-select-none" href="{{ url('/logout') }}"><i class="bi bi-door-closed me-1"></i> Keluar</a>
+          <a class="btn btn-primary keluar user-select-none w-100 w-lg-auto"
+             href="{{ url('/logout') }}">
+            <i class="bi bi-door-closed me-1"></i> Keluar
+          </a>
         @else
-          <a class="btn btn-primary masuk user-select-none" data-bs-toggle="modal" data-bs-target="#ModalLogin"><i class="bi bi-door-open me-1"></i> Masuk</a>
+          <a class="btn btn-primary masuk user-select-none w-100 w-lg-auto"
+             data-bs-toggle="modal" data-bs-target="#ModalLogin">
+            <i class="bi bi-door-open me-1"></i> Masuk
+          </a>
         @endif
-      </form>
+
+      </div>
     </div>
   </div>
 </nav>

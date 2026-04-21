@@ -43,42 +43,42 @@
 
     <!-- Toast -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="DefToast1" class="toast mb-2 user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="DefToast1" class="toast bg-light mb-2 user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-primary">
                 <strong class="me-auto text-light">
                     <i class="bi bi-exclamation-octagon"></i> STCAMP404
                 </strong>
-                <small class="text-light">informasi</small>
+                <small class="text-light me-1">informasi</small>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
             </div>
             <div class="toast-body">
-                <i class="bi bi-caret-right-fill"></i> Fungsi belum ditambahkan oleh admin!
+                <i class="bi bi-caret-right-fill"></i> Twitter dinonaktifkan oleh admin !!
             </div>
         </div>
 
-        <div id="DefToast2" class="toast mb-2 user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="DefToast2" class="toast bg-light mb-2 user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-primary">
                 <strong class="me-auto text-light">
                     <i class="bi bi-exclamation-octagon"></i> STCAMP404
                 </strong>
-                <small class="text-light">informasi</small>
+                <small class="text-light me-1">informasi</small>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
             </div>
             <div class="toast-body">
-                <i class="bi bi-caret-right-fill"></i> Fungsi belum ditambahkan oleh admin!
+                <i class="bi bi-caret-right-fill"></i> Instagram dinonaktifkan oleh admin !!
             </div>
         </div>
 
-        <div id="DefToast3" class="toast user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="DefToast3" class="toast bg-light mb-2 user-select-none" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-primary">
                 <strong class="me-auto text-light">
                     <i class="bi bi-exclamation-octagon"></i> STCAMP404
                 </strong>
-                <small class="text-light">informasi</small>
+                <small class="text-light me-1">informasi</small>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
             </div>
             <div class="toast-body">
-                <i class="bi bi-caret-right-fill"></i> Fungsi belum ditambahkan oleh admin!
+                <i class="bi bi-caret-right-fill"></i> Facebook dinonaktifkan oleh admin !!
             </div>
         </div>
     </div>
@@ -92,27 +92,29 @@
 </html>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        window.openLink = function (url, openInNewTab = true, toastId = null) {
-            if (!url || url.trim() === "" || url.startsWith("#")) {
-                if (toastId) {
-                    const toastEl = document.getElementById(toastId);
-                    if (toastEl) {
-                        new bootstrap.Toast(toastEl).show();
-                    }
+    window.openLink = function (url, openInNewTab = true, toastId = null) {
+
+        if (!url || typeof url !== "string" || url.trim() === "" || url.startsWith("#")) {
+            if (toastId) {
+                const toastEl = document.getElementById(toastId);
+                if (toastEl) {
+                    new bootstrap.Toast(toastEl).show();
                 }
-                return false;
             }
-            if (url.startsWith("mailto:")) {
-                window.location.href = url;
-                return true;
-            }
-            if (openInNewTab) {
-                window.open(url, "_blank", "noopener,noreferrer");
-            } else {
-                window.location.href = url;
-            }
+            return false;
+        }
+
+        if (url.startsWith("mailto:")) {
+            window.location.href = url;
             return true;
-        };
-    });
+        }
+
+        if (openInNewTab) {
+            window.open(url, "_blank", "noopener,noreferrer");
+        } else {
+            window.location.href = url;
+        }
+
+        return true;
+    };
 </script>
