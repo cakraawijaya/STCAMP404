@@ -84,7 +84,7 @@
                         <td class="p-2 align-middle">{{ $v->nis }}</td>
                         <td class="p-2 align-middle">{{ $v->nama_siswa }}</td>
                         <td class="p-2 align-middle">{{ $v->pelatihan }}</td>
-                        <td class="p-2 align-middle">{{ $v->updated_at->format('d-m-Y s:i:H') }}</td>
+                        <td class="p-2 align-middle">{{ $v->updated_at->format('d-m-Y (H:i:s)') }}</td>
                         <td>
                             <div class="d-grid gap-2 p-2 align-middle user-select-none">
                                 <a class="btn btn-outline-info btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{ $v->id }}">

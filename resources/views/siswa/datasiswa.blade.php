@@ -51,7 +51,7 @@
                         <tr>
                             <td>{{ $v->nis }}</td>
                             <td>{{ $v->pelatihan }}</td>
-                            <td>{{ $v->created_at->format('d-m-Y H:i:s') }}</td>
+                            <td>{{ $v->created_at->format('d-m-Y (H:i:s)') }}</td>
                         </tr>
                     @endforeach
                 @else
