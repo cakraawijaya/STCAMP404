@@ -22,8 +22,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 mt-4 input-sm">
-                <button type="submit" class="btn btn-primary btn-md btnreg p-2"><i class="bi bi-envelope-check-fill me-1"></i> Setuju & Lanjutkan</button>
+            <div class="col-md-4 mt-4 input-sm">
+                <button type="submit" class="btn btn-primary btn-md btnreg p-2 px-3"><i class="bi bi-envelope-check-fill me-1"></i> Setuju & Lanjutkan</button>
             </div>
         </div>
     </form>
