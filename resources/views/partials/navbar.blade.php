@@ -2,20 +2,21 @@
 <nav class="navbar navbar-expand-lg navbar-light mainnavcolor p-3 mb-3 pb-2">
   <div class="container-fluid">
 
-    <a class="navbar-brand fw-bold me-lg-5 user-select-none" onclick="openLink('#')">
+    <a class="navbar-brand fw-bold me-lg-5 user-select-none" href="{{ url('/') }}">
       <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
     </a>
+    @if(Session()->has('LogSession'))
+      <a class="navbar-brand fw-bold me-lg-5 user-select-none" onclick="openLink('#')">
+        <i class="bi bi-book-half me-2"></i> {{ config('app.name', 'STCAMP404') }}
+      </a>
+    @endif
 
-    {{-- Toggle --}}
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
       aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    {{-- Menu --}}
     <div class="collapse navbar-collapse mt-4 mt-lg-0 mb-3 mb-lg-0 px-0" id="navbarScroll">
-
-      {{-- Left Menu --}}
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @if(Session()->has('LogSession'))
           <li class="nav-item">
@@ -23,7 +24,6 @@
               <i class="bi bi-house-fill me-1"></i> Beranda
             </a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link user-select-none" href="{{ url('/dashboard') }}">
               <i class="bi bi-person-rolodex me-1"></i> Dashboard
@@ -32,9 +32,7 @@
         @endif
       </ul>
 
-      {{-- Right Button --}}
       <div class="d-flex align-items-lg-center mt-2 mt-lg-0">
-
         @if(Session()->has('LogSession'))
           <a class="btn btn-primary keluar user-select-none w-100 w-lg-auto"
              href="{{ url('/logout') }}">
@@ -46,7 +44,6 @@
             <i class="bi bi-door-open me-1"></i> Masuk
           </a>
         @endif
-
       </div>
     </div>
   </div>

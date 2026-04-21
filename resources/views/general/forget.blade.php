@@ -1,14 +1,14 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="mt-2 mt-md-0 user-select-none">
+    <h2 class="mt-4 mt-md-3 mt-lg-3 pt-md-2 user-select-none">
         <i class="bi bi-patch-question"></i> Lupa Password
     </h2><hr>
 
     <form class="form-group row" action="{{ url('/forgetProcess') }}" method="POST">
         @csrf
         <div class="col-xl-12">
-            <div class="col-md-6 mt-3 mt-sm-5 input-sm user-select-none">
+            <div class="col-md-6 mt-3 mt-md-4 pt-1 input-sm user-select-none">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" name="email" class="form-control mt-3 @error('email_forget') is-invalid @enderror" 
                 pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" oninput="this.value = this.value.toLowerCase()"

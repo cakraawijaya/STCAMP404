@@ -1,15 +1,15 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="mt-2 mt-md-0 user-select-none">
+    <h2 class="mt-4 mt-md-3 mt-lg-3 pt-md-2 user-select-none">
         <i class="bi bi-universal-access"></i> Reset Password
     </h2><hr>
     
     @if($data)
         <form class="form-group row" action="{{ url('/resetProcess') }}" method="POST">
             @csrf
-            <div class="col-xl-12">
-                <div class="mt-3 mt-sm-5 col-md-6 input-sm user-select-none">
+            <div class="row">
+                <div class="col-md-8 mt-3 mt-sm-4 input-sm user-select-none">
                     <label for="password"><i class="bi bi-envelope me-1"></i> Email</label>
                     <div class="input-group mb-3 mt-2">
                         <input type="email" class="form-control" value="{{ $data->email }}" disabled>
@@ -18,11 +18,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 mt-2 input-sm me-4 user-select-none">
+                <div class="col-md-4 mt-2 pt-lg-2 input-sm user-select-none">
                     <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi Baru</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassForget()" class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-eye-fill"></i>
+                            <i class="bi bi-eye-fill"></i>
                         </button>
                         <input type="password" id="new_password" name="password" 
                         class="form-control @error('password') is-invalid @enderror" 
@@ -39,11 +39,11 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-md-3 mt-2 input-sm user-select-none">
+                <div class="col-md-4 mt-2 pt-lg-2 input-sm user-select-none">
                     <label for="password-confirm user-select-none"><i class="bi bi-key me-1"></i> Konfirmasi Sandi Baru</label>
                     <div class="input-group mb-3 mt-2">
                         <button onclick="ShowPassConfirmForget()" class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-eye-fill"></i>
+                            <i class="bi bi-eye-fill"></i>
                         </button>
                         <input type="password" id="new_password_confirm" name="password_confirmation" 
                         class="form-control @error('password_confirmation') is-invalid @enderror" 

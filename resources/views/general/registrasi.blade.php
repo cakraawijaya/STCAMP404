@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="mt-2 mt-md-0 user-select-none">
+    <h2 class="mt-4 mt-md-3 mt-lg-3 pt-md-2 user-select-none">
         <i class="bi bi-person-lines-fill me-1"></i> Registrasi
     </h2><hr>
 
@@ -34,7 +34,7 @@
                 </div>
                 @enderror
             </div>
-            <div class="col-md-4 mt-4 input-sm user-select-none">
+            <div class="col-md-4 mt-4 ms-0 ms-md-5 input-sm user-select-none">
                 <label for="email"><i class="bi bi-envelope me-1"></i> Email</label>
                 <input type="email" id="email_registration" name="email" 
                 class="form-control mt-3 @error('email') is-invalid @enderror" value="{{ old('email') }}" 
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mt-4 input-sm user-select-none">
+            <div class="col-md-4 mt-4 pt-lg-2 input-sm user-select-none">
                 <label for="password"><i class="bi bi-key me-1"></i> Kata Sandi</label>
                 <div class="input-group mt-3">
                     <button onclick="ShowPassRegister()" class="btn btn-outline-secondary" type="button">
@@ -70,7 +70,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="col-md-4 mt-4 input-sm user-select-none">
+            <div class="col-md-4 mt-4 pt-lg-2 ms-0 ms-md-5 input-sm user-select-none">
                 <label for="password-confirm"><i class="bi bi-key me-1"></i> Konfirmasi Sandi</label>
                 <div class="input-group mt-3">
                     <button onclick="ShowPassConfirmRegister()" class="btn btn-outline-secondary" type="button">
@@ -89,12 +89,12 @@
             </div>
         </div>
         
-        <div class="col-md-12 mt-5 mt-sm-4 user-select-none">
+        <div class="col-md-12 mt-5 pt-3 pt-md-0 user-select-none">
             <a href="#" class="login" data-bs-toggle="modal" data-bs-target="#ModalLogin">
             Sudah Punya Akun ? Login Sekarang <i class="bi bi-patch-exclamation-fill"></i>
             </a>
         </div>
-        <div class="col-md-12 mt-4 input-sm">
+        <div class="col-md-12 mt-3 input-sm">
             <button type="submit" class="btn btn-primary btn-md btnreg p-2"><i class="bi bi-person-lines-fill me-1"></i> Registrasi</button>
         </div>
     </form>
