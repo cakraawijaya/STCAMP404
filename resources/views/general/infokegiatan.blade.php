@@ -1,9 +1,10 @@
 @extends('layout.main')
 
 @section('container')
-    <h2 class="user-select-none"><i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan</h2>
-    <hr><br class="user-select-none">
-    <div class="accordion" id="accordionExample">
+    <h2 class="mt-4 mt-md-3 mt-lg-3 pt-md-2 user-select-none">
+        <i class="bi bi-megaphone-fill me-1"></i> Info Kegiatan
+    </h2><hr>
+    <div class="accordion mt-4 pt-2 pt-md-3" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button user-select-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

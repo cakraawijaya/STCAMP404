@@ -6,16 +6,14 @@
     </h2><hr>
 
     <div class="mt-4 pt-1 pt-md-2"><caption> Data Pelatihan Anda :</caption></div>
-    <div class="table-title user-select-none">
-        <div class="row">
-            <div class="col-sm-12 mt-4">
-                <form class="d-flex">
-                    <div class="col-sm-8">
-                        <a class="btn btn-outline-info text-dark me-2" role="group" data-bs-toggle="modal" data-bs-target="#ModalAdd"><i class="bi bi-person-plus-fill me-1"></i> Daftar</a>
-                        <a class="btn btn-outline-info text-dark" role="group" href="{{ url('/data-siswa') }}"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</a>
-                    </div>
-                </form>
-            </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mt-4">
+        <div class="d-flex flex-row flex-wrap gap-3 mt-4 align-items-stretch">
+            <a class="btn btn-outline-info text-dark flex-fill text-center" data-bs-toggle="modal" data-bs-target="#ModalAdd">
+                <i class="bi bi-person-plus-fill me-1"></i> Daftar
+            </a>
+            <a class="btn btn-outline-info text-dark flex-fill text-center" href="{{ url('/data-siswa') }}">
+                <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+            </a>
         </div>
     </div>
 
@@ -37,36 +35,39 @@
         </div>
     @endif
     <!-- Akhir Session Alert Siswa -->
-    <br class="user-select-none">
 
-    <table class="table table-striped table-hover table-bordered caption-top mt-3 col-sm-12 table-responsive">
-        <thead class="table-success">
-            <tr class="user-select-none">
-                <th scope="col">Nomor Induk Siswa</th>
-                <th scope="col">Pelatihan yang diikuti</th>
-                <th scope="col">Waktu Daftar</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if($value->count() > 0)
-                @foreach($value as $v)
-                <tr>
-                    <td>{{ $v->nis }}</td>
-                    <td>{{ $v->pelatihan }}</td>
-                    <td>{{ $v->created_at->format('d:m:Y s:i:H') }}</td>
+    <div class="table-responsive mt-4">
+        <table class="table table-striped table-hover table-bordered caption-top align-middle">
+            <thead class="table-success">
+                <tr class="user-select-none">
+                    <th>Nomor Induk Siswa</th>
+                    <th>Pelatihan yang diikuti</th>
+                    <th>Waktu Daftar</th>
                 </tr>
-                @endforeach
-            @else
-                <tr>
-                    <td colspan="3" class="p-4 text-center align-middle user-select-none">
-                        Data tidak ditemukan....
-                    </td>
-                </tr>
-            @endif
-        </tbody>
-    </table>
-    <div class="user-select-none mt-4">
-        {{ $value->links() }}
+            </thead>
+            <tbody>
+                @if($value->count() > 0)
+                    @foreach($value as $v)
+                        <tr>
+                            <td>{{ $v->nis }}</td>
+                            <td>{{ $v->pelatihan }}</td>
+                            <td>{{ $v->created_at->format('d-m-Y H:i:s') }}</td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="3" class="text-center p-4">
+                            Data tidak ditemukan....
+                        </td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex mt-4">
+        <div class="pagination-wrapper overflow-auto">
+            {{ $value->links() }}
+        </div>
     </div>
 
 

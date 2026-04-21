@@ -178,3 +178,22 @@ td {
     max-height: 17em;
     max-width: auto;
 }
+
+.pagination-wrapper {
+    max-width: 100%;
+}
+
+.pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination li {
+    margin: 2px;
+}
+
+.pagination li a,
+.pagination li span {
+    border-radius: 6px !important;
+}
