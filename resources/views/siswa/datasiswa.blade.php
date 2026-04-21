@@ -98,9 +98,12 @@
                             <label class="input-group-text" for="AddExercise">
                                 <small class="text-sm">Opsi:</small>
                             </label>
-                            <select class="form-select text-sm @error('pelatihan') is-invalid @enderror" name="pelatihan" id="AddExercise">
+                            <select class="form-select text-sm" name="pelatihan" id="AddExercise" required>
+                                <option value="" selected disabled>-- Pilih Pelatihan --</option>
                                 @foreach($PEL as $val)
-                                    <option value="{{ $val->nama_pelatihan }}" selected class="text-sm">{{ $val->nama_pelatihan }}</option>
+                                    <option value="{{ $val->nama_pelatihan }}">
+                                        {{ $val->nama_pelatihan }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
