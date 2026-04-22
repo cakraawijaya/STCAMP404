@@ -53,11 +53,11 @@
 <br><br>
 
 ## Database
-1. Open ``` XAMPP ```, then start the ``` Apache ``` & ``` MySQL ``` section. This aims to be able to support the website optimally.<br><br>
+1. Open ``` XAMPP ```, then start the ``` MySQL ``` section to run a database server locally.<br><br>
 
 2. Access the browser first in order to open the database admin panel, please copy the following link: ``` localhost/phpmyadmin/ ```.<br><br>
 
-3. Create a database called ``` stcamp404 ``` on local.<br><br>
+3. Create a database called ``` stcamp404 ```.<br><br>
 
 4. Open the ``` stcamp404 ``` database and Import ``` stcamp404_db.sql ``` in the ``` STCAMP404/public/sql ``` directory.<br><br>
 
@@ -158,7 +158,7 @@
 <td width="210"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
 <td width="210"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
 <td width="210"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
-<td width="210"><img src="documentation/admin/data_management/add_update_delete_failed.png" alt="data-management-add-update-failed"></td>
+<td width="210"><img src="documentation/admin/data_management/add_update_failed.png" alt="data-management-add-update-failed"></td>
 </tr>
 </table>
 

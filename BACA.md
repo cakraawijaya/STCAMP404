@@ -53,11 +53,11 @@
 <br><br>
 
 ## Basis data
-1. Buka ``` XAMPP ```, lalu tekan tombol mulai di bagian ``` Apache ``` & ``` MySQL ```. Hal ini bertujuan untuk dapat mendukung website secara optimal.<br><br>
+1. Buka ``` XAMPP ```, lalu tekan tombol mulai di bagian ``` MySQL ``` untuk menjalankan server database secara lokal.<br><br>
 
 2. Akses peramban terlebih dahulu untuk membuka panel admin basis data, silakan salin tautan berikut: ``` localhost/phpmyadmin/ ```.<br><br>
 
-3. Buat basis data bernama ``` stcamp404 ``` di lokal.<br><br>
+3. Buat basis data bernama ``` stcamp404 ```.<br><br>
 
 4. Buka basis data ``` stcamp404 ``` dan Impor ``` stcamp404_db.sql ``` di direktori ``` STCAMP404/public/sql ```.<br><br>
 
@@ -158,7 +158,7 @@
 <td width="210"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
 <td width="210"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
 <td width="210"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
-<td width="210"><img src="documentation/admin/data_management/add_update_delete_failed.png" alt="data-management-add-update-failed"></td>
+<td width="210"><img src="documentation/admin/data_management/add_update_failed.png" alt="data-management-add-update-failed"></td>
 </tr>
 </table>
 
