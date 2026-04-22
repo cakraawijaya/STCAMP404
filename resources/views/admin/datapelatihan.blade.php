@@ -9,7 +9,7 @@
     <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3 mt-4 pt-2">
         <div class="d-flex gap-4">
             <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" data-bs-toggle="modal" data-bs-target="#ModalCreate">
-                <i class="bi bi-person-plus-fill me-1"></i> Daftar
+                <i class="bi bi-person-plus-fill me-1"></i> Tambah
             </a>
             <a class="btn btn-outline-info text-dark w-100 w-md-auto d-inline-flex align-items-center gap-1 justify-content-center justify-content-md-start text-center text-md-start" href="{{ url('/data-pelatihan') }}">
                 <i class="bi bi-arrow-clockwise me-1"></i> Refresh
@@ -24,6 +24,10 @@
     </div>
 
     <!-- Session Alert Admin -->
+    @php
+        $isSearch = request()->has('search');
+        $isEmpty = $data->count() == 0;
+    @endphp
     @if ($msgAdmin = Session::get('addAdminNotif'))
         <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
@@ -48,6 +52,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    @if ($msgSearchFound = Session::get('searchFoundNotif'))
+        <div class="alert alert-success alert-dismissible fade show mt-4 user-select-none" role="alert">
+            <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
+                {{ $msgSearchFound }}
+            </small>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     @if ($msgerrCreateAdmin = Session::get('errorCreateAdminNotif'))
         <div class="alert alert-danger alert-dismissible fade show mt-4 user-select-none" role="alert">
             <small class="text-muted"><i class="bi bi-info-square-fill me-1"></i>
@@ -63,7 +75,7 @@
             </small>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif    
+    @endif
     <!-- Akhir Session Alert Admin -->
 
     <div class="table-responsive mt-4">
@@ -230,4 +242,19 @@
     </div>
     <!-- Akhir Pop Up Modal Delete-->
     @endforeach
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let isSearch = {{ request()->has('search') ? 'true' : 'false' }};
+            let isEmpty = {{ $data->count() == 0 ? 'true' : 'false' }};
+
+            // Kalau search & hasil kosong, maka hapus semua alert
+            if (isSearch && isEmpty) {
+                document.querySelectorAll('.alert').forEach(el => el.remove());
+            }
+
+        });
+    </script>
 @endsection

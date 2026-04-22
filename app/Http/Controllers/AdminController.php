@@ -24,15 +24,18 @@ class AdminController extends Controller
             Session::pull('siswaAccess');
             $NIS = $this->dbu->where('role', 'siswa')->whereNotNull('siswa_id')->get(['siswa_id', 'name']);
             $PEL = $this->dbl->distinct()->get(['nama_pelatihan']);
-            if($reqdata->has('search')){
+            if ($reqdata->has('search')) {
                 $search = $this->db->where('nis','LIKE','%'.$reqdata->search.'%')->orWhere('nama_siswa', 'LIKE', '%'.$reqdata->search.'%')->orWhere('pelatihan', 'LIKE', '%'.$reqdata->search.'%')->orWhere('created_at', 'LIKE', '%' . $reqdata->search . '%');
                 $searchData = $search->paginate(5);
+                if ($searchData->count() > 0) {
+                    Session::flash('searchFoundNotif', 'Data ditemukan sebanyak '.$searchData->total().' data');
+                }
                 $data = [
                     'data' => $searchData,
                     'NIS' => $NIS,
                     'PEL' => $PEL
                 ];
-            } else{
+            } else {
                 $readDB = $this->db->paginate(5);
                 $data = [
                     'data' => $readDB,
