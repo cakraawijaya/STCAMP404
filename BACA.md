@@ -75,7 +75,7 @@
 <br><br>
 
 ## Memulai
-1. Pertama, silakan cloning proyek github ``` STCAMP404 ``` dan simpan di mana saja di komputer Anda dengan mengetikkan perintah berikut di ```Git Bash``` atau ```Terminal```:<br>
+1. Pertama, silakan cloning proyek github ``` STCAMP404 ``` dan simpan di mana saja di komputer anda dengan mengetikkan perintah berikut di ```Git Bash``` atau ```Terminal```:<br>
    <table><tr><td width="780">
 
    ````bash
@@ -152,13 +152,14 @@
 </table><br>
 <table>
 <tr>
-<th width="840" colspan="4">Manajemen Data Pelatihan</th>
+<th width="840" colspan="5">Manajemen Data Pelatihan</th>
 </tr>
 <tr>
-<td width="210"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
-<td width="210"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
-<td width="210"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
-<td width="210"><img src="documentation/admin/data_management/add_update_failed.png" alt="data-management-add-update-failed"></td>
+<td width="168"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
+<td width="168"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
+<td width="168"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
+<td width="168"><img src="documentation/admin/data_management/add_update_failed.png" alt="data-management-add-update-failed"></td>
+<td width="168"><img src="documentation/admin/data_management/search_found.png" alt="data-management-search-found"></td>
 </tr>
 </table>
 
