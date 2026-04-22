@@ -152,6 +152,28 @@
 </table><br>
 <table>
 <tr>
+<th width="840" colspan="2">User Dashboard</th>
+</tr>
+<tr>
+<th width="420">Admin</th>
+<th width="420">Students</th>
+</tr>
+<tr>
+<td><img src="documentation/admin/dashboard.png" alt="dashboard-admin"></td>
+<td><img src="documentation/siswa/dashboard.png" alt="dashboard-siswa"></td>
+</tr>
+</table><br>
+<table>
+<tr>
+<th width="840" colspan="2">Student Personal Data</th>
+</tr>
+<tr>
+<td width="420"><img src="documentation/siswa/data_siswa/add_success.png" alt="data-siswa-add-success"></td>
+<td width="420"><img src="documentation/siswa/data_siswa/add_failed.png" alt="data-siswa-add-failed"></td>
+</tr>
+</table><br>
+<table>
+<tr>
 <th width="840" colspan="5">Training Data Management</th>
 </tr>
 <tr>
@@ -161,7 +183,17 @@
 <td width="168"><img src="documentation/admin/data_management/add_update_failed.png" alt="data-management-add-update-failed"></td>
 <td width="168"><img src="documentation/admin/data_management/search_found.png" alt="data-management-search-found"></td>
 </tr>
-</table>
+</table><br>
+<table>
+<tr>
+<th width="840" colspan="2">Account Registration</th>
+</tr>
+<tr>
+<td width="420"><img src="documentation/general/registration/success.png" alt="registration-success"></td>
+<td width="420"><img src="documentation/general/registration/failed.png" alt="registration-failed"></td>
+</tr>
+</table><br>
+Explore the full documentation <u><a href="https://github.com/cakraawijaya/STCAMP404/tree/master/documentation">here</a></u>
 
 <br><br>
 
