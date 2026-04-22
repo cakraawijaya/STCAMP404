@@ -5,7 +5,7 @@
 ![Type](https://img.shields.io/badge/Type-Course-light.svg?style=flat&logo=gitbook&logoColor=white&color=%23F7DF1E)
 
 # STCAMP404
-<p>STCAMP404 adalah hasil dari pelatihan reguler CAMP404 Batch 15 yang saya sesuaikan.</p>
+<p>STCAMP404 adalah hasil pengembangan dari pelatihan reguler CAMP404 Batch 15.</p>
 
 <br><br>
 
@@ -13,7 +13,7 @@
 | Bagian | Deskripsi |
 | --- | --- |
 | Fitur | • Masuk<br>• Buat<br>• Baca<br>• Ubah<br>• Hapus<br>• Validasi<br>• Paginasi<br>• Pencarian<br>• Grafik<br>• Hak akses<br>• DLL |
-| Pustaka | Highchartjs |
+| Pustaka | Highcharts.js |
 | Kerangka Kerja | • Laravel 8<br>• Bootstrap 5 |
 | Peralatan | • Visual Studio Code<br>• Xampp<br>• Git |
 
@@ -75,63 +75,92 @@
 <br><br>
 
 ## Memulai
-1. Unduh  dan ekstrak repositori ini.<br><br>
-
-2. Buka direktori ``` STCAMP404 ```, lalu buka ``` GitBash ``` di dalam direktori tersebut.
-   <ul>
-       <li>Pertama, periksa apakah ada masalah atau tidak, jika masih ada kesalahan, sesuaikan saja dengan situasinya.</li><br>
-       <li>Kedua, langkah ini wajib dilakukan, jadi silakan salin perintah berikut ini:<br><br></li>
-       
+1. Pertama, silakan cloning proyek github ``` STCAMP404 ``` dan simpan di mana saja di komputer Anda dengan mengetikkan perintah berikut di ```Git Bash``` atau ```Terminal```:<br>
    <table><tr><td width="780">
-     
+
    ````bash
-   php artisan serve
+    git clone https://github.com/cakraawijaya/STCAMP404.git
    ````
 
-   </td></tr></table>
-   </ul><br>
-   
-3. Buka ``` peramban ``` anda (Tab baru), lalu ketik -> ``` http://127.0.0.1:8000/ ``` atau sesuaikan dengan yang ada di ``` GitBash ``` anda.<br><br>
+   </td></tr></table><br>
 
-4. Silakan masuk dan akses fitur-fiturnya, selamat menikmati [Selesai].
+2. Ketikkan perintah berikut di ``` Git Bash ``` agar menginstall semua dependency / library yang dibutuhkan oleh project Laravel:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    composer install
+   ````
+
+   </td></tr></table><br>
+
+3. Ketikkan perintah berikut di ``` Git Bash ``` agar menyalin file konfigurasi environment sebagai ``` file utama (.env) ```:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    cp .env.example .env
+   ````
+
+   </td></tr></table><br>
+
+4. Buka file ``` .env ```, lalu atur isinya seperti ini:<br>
+   <ul>
+       <li>APP_NAME=STCAMP404</li>
+       <li>DB_DATABASE=stcamp404</li>
+   </ul><br>
+
+5. Ketikkan perintah berikut di ``` Git Bash ``` agar menghasilkan application key untuk keamanan Laravel:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan key:generate
+   ````
+
+   </td></tr></table><br>
+
+6. Ketikkan perintah berikut di ``` Git Bash ``` agar membuat tabel-tabel database sesuai struktur yang ada di project:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan migrate
+   ````
+
+   </td></tr></table><br>
+
+7. Ketikkan perintah berikut di ``` Git Bash ``` agar menjalankan server lokal Laravel:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan serve
+   ````
+
+   </td></tr></table><br>
+
+8. Buka ``` peramban ``` anda, lalu ketik -> ``` http://127.0.0.1:8000/ ``` atau sesuaikan dengan yang ada di ``` Git Bash ``` anda.<br><br>
+
+9. Silakan masuk dan akses fitur-fiturnya, selamat menikmati [Selesai].
 
 <br><br>
 
 ## Sorotan
 <table>
 <tr>
-<th width="280">Tampilan Beranda</th>
-<th width="280">Tampilan Info Kegiatan</th>
-<th width="280">Tampilan Dasbor</th>
+<th width="840">Beranda</th>
 </tr>
 <tr>
-<td><img src="documentation/Home.jpg" alt="home"></td>
-<td><img src="documentation/Activity Information.jpg" alt="activity-information"></td>
-<td><img src="documentation/Dashboard.jpg" alt="dashboard"></td>
+<td><img src="documentation/general/home.png" alt="home"></td>
+</tr>
+</table><br>
+<table>
+<tr>
+<th width="840" colspan="4">Manajemen Data Pelatihan</th>
+</tr>
+<tr>
+<td width="210"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
+<td width="210"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
+<td width="210"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
+<td width="210"><img src="documentation/admin/data_management/add_update_delete_failed.png" alt="data-management-add-update-failed"></td>
 </tr>
 </table>
-<table>
-<tr>
-<th width="280">Tampilan Registrasi</th>
-<th width="280">Tampilan Lupa Password</th>
-<th width="280">Tampilan Pelatihan Pengguna</th>
-</tr>
-<tr>
-<td><img src="documentation/Registration.jpg" alt="registration"></td>
-<td><img src="documentation/Forgot Password.jpg" alt="forgot-password"></td>
-<td><img src="documentation/User Training.jpg" alt="user-training"></td>
-</tr></table>
-<table>
-<tr>
-<th width="280">Tampilan Data Pelatihan</th>
-<th width="280">Tampilan Data Siswa</th>
-<th width="280">Tampilan Ubah Data</th>
-</tr>
-<tr>
-<td><img src="documentation/Training Data.jpg" alt="training-data"></td>
-<td><img src="documentation/Student Data.jpg" alt="student-data"></td>
-<td><img src="documentation/Change Data.jpg" alt="change-data"></td>
-</tr></table>
 
 <br><br>
 

@@ -5,7 +5,7 @@
 ![Type](https://img.shields.io/badge/Type-Course-light.svg?style=flat&logo=gitbook&logoColor=white&color=%23F7DF1E)
 
 # STCAMP404
-<p>STCAMP404 is the result of the regular CAMP404 Batch 15 training that I customized.</p>
+<p>STCAMP404 is a development outcome of the regular training program CAMP404 Batch 15.</p>
 
 <br><br>
 
@@ -13,7 +13,7 @@
 | Part | Description |
 | --- | --- |
 | Features | • Login<br>• Create<br>• Read<br>• Update<br>• Delete<br>• Validation<br>• Pagination<br>• Search<br>• Charts<br>• Access Rights<br>• ETC |
-| Libraries | Highchartjs |
+| Libraries | Highcharts.js |
 | Framework | • Laravel 8<br>• Bootstrap 5 |
 | Tools | • Visual Studio Code<br>• Xampp<br>• Git |
 
@@ -75,63 +75,92 @@
 <br><br>
 
 ## Get Started
-1. Download and extract this repository.<br><br>
+1. First, please clone the GitHub project ```STCAMP404``` and place it wherever you like on your computer by typing the following command in ```Git Bash``` or ```Terminal```:<br>
+   <table><tr><td width="780">
 
-2. Open the ``` STCAMP404 ``` directory, then open ``` GitBash ``` inside that directory.
-   <ul>
-       <li>First, check whether there is a problem or not, if there is still an error, just adjust it according to the situation.</li><br>
-       <li>Secondly, this step is mandatory, so please copy the following command:<br><br></li>
-       
-   <table><tr><td width="810">
-     
    ````bash
-   php artisan serve
+    git clone https://github.com/cakraawijaya/STCAMP404.git
    ````
 
-   </td></tr></table>
-   </ul><br>
-   
-3. Open your ``` browser ``` (New tab), then type -> ``` http://127.0.0.1:8000/ ``` or customize the one on your ``` GitBash ```.<br><br>
+   </td></tr></table><br>
 
-4. Please login and access the features, enjoy [Done].
-    
+2. Type the following command in ```Git Bash``` to install all the dependencies / libraries required by the Laravel project:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    composer install
+   ````
+
+   </td></tr></table><br>
+
+3. Type the following command in ``` Git Bash ``` to copy the environment configuration file as the ``` main file (.env) ```:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    cp .env.example .env
+   ````
+
+   </td></tr></table><br>
+
+4. Open the ``` .env ``` file, then set its contents as follows:<br>
+   <ul>
+       <li>APP_NAME=STCAMP404</li>
+       <li>DB_DATABASE=stcamp404</li>
+   </ul><br>
+
+5. Type the following command in ```Git Bash``` to generate an application key for Laravel security:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan key:generate
+   ````
+
+   </td></tr></table><br>
+
+6. Type the following command in ```Git Bash``` to create the database tables according to the structure in the project:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan migrate
+   ````
+
+   </td></tr></table><br>
+
+7. Type the following command in ``` Git Bash ``` to run the Laravel local server:<br>
+   <table><tr><td width="780">
+
+   ````bash
+    php artisan serve
+   ````
+
+   </td></tr></table><br>
+
+8. Open your ``` browser ```, then type -> ``` http://127.0.0.1:8000/ ``` or customize the one on your ``` Git Bash ```.<br><br>
+
+9. Please login and access the features, enjoy [Done].
+
 <br><br>
 
 ## Highlights
 <table>
 <tr>
-<th width="280">Home View</th>
-<th width="280">Activity Information View</th>
-<th width="280">Dashboard View</th>
+<th width="840">Home</th>
 </tr>
 <tr>
-<td><img src="documentation/Home.jpg" alt="home"></td>
-<td><img src="documentation/Activity Information.jpg" alt="activity-information"></td>
-<td><img src="documentation/Dashboard.jpg" alt="dashboard"></td>
+<td><img src="documentation/general/home.png" alt="home"></td>
+</tr>
+</table><br>
+<table>
+<tr>
+<th width="840" colspan="4">Training Data Management</th>
+</tr>
+<tr>
+<td width="210"><img src="documentation/admin/data_management/add_success.png" alt="data-management-add-success"></td>
+<td width="210"><img src="documentation/admin/data_management/update_success.png" alt="data-management-update-success"></td>
+<td width="210"><img src="documentation/admin/data_management/delete_success.png" alt="data-management-delete-success"></td>
+<td width="210"><img src="documentation/admin/data_management/add_update_delete_failed.png" alt="data-management-add-update-failed"></td>
 </tr>
 </table>
-<table>
-<tr>
-<th width="280">Registration View</th>
-<th width="280">Forgot Password View</th>
-<th width="280">User Training View</th>
-</tr>
-<tr>
-<td><img src="documentation/Registration.jpg" alt="registration"></td>
-<td><img src="documentation/Forgot Password.jpg" alt="forgot-password"></td>
-<td><img src="documentation/User Training.jpg" alt="user-training"></td>
-</tr></table>
-<table>
-<tr>
-<th width="280">Training Data View</th>
-<th width="280">Student Data View</th>
-<th width="280">Change Data View</th>
-</tr>
-<tr>
-<td><img src="documentation/Training Data.jpg" alt="training-data"></td>
-<td><img src="documentation/Student Data.jpg" alt="student-data"></td>
-<td><img src="documentation/Change Data.jpg" alt="change-data"></td>
-</tr></table>
 
 <br><br>
 
