@@ -28,7 +28,7 @@
     <div class="row g-4">
         <div class="col-12 col-md-7 my-md-5 mt-5 order-1">
             <div class="card h-100">
-                <div class="row g-0 h-100">
+                <div class="row g-0 h-100 user-select-none">
 
                     <div class="col-12 col-md-7 order-1">
                         <img src="{{ $LogUser->image }}"

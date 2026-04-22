@@ -108,7 +108,7 @@
         </table>
     </div>
     <div class="d-flex justify-content-center justify-content-md-start mt-4">
-        <div class="pagination-wrapper overflow-auto">
+        <div class="pagination-wrapper overflow-auto user-select-none">
             {{ $data->links() }}
         </div>
     </div>
