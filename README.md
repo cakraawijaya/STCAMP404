@@ -53,7 +53,7 @@
 <br><br>
 
 ## Database
-1. Open ``` XAMPP ```, then start the ``` MySQL ``` section to run a database server locally.<br><br>
+1. Open ``` XAMPP ```, then start the ``` Apache ``` & ``` MySQL ``` section to run a web server and a database server locally.<br><br>
 
 2. Access the browser first in order to open the database admin panel, please copy the following link: ``` localhost/phpmyadmin/ ```.<br><br>
 
