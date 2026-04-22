@@ -28,7 +28,7 @@ class AdminController extends Controller
                 $search = $this->db->where('nis','LIKE','%'.$reqdata->search.'%')->orWhere('nama_siswa', 'LIKE', '%'.$reqdata->search.'%')->orWhere('pelatihan', 'LIKE', '%'.$reqdata->search.'%')->orWhere('created_at', 'LIKE', '%' . $reqdata->search . '%');
                 $searchData = $search->paginate(5);
                 if ($searchData->count() > 0) {
-                    Session::flash('searchFoundNotif', 'Data ditemukan sebanyak '.$searchData->total().' data');
+                    Session::flash('searchFoundNotif', 'Data ditemukan (sebanyak '.$searchData->total().' data) !!');
                 }
                 $data = [
                     'data' => $searchData,
@@ -86,13 +86,13 @@ class AdminController extends Controller
             if ($DB_SearchNama == $DB_NULLnama) {
                 $findID = $this->db->find($id);
                 $findID->update($reqdata->all());
-                $msg = ' Selamat anda berhasil mengubah data siswa !!';
+                $msg = ' Berhasil mengubah data siswa !!';
                 return redirect()->route('data-pelatihan')->with('updateAdminNotif', $msg);
             }
-            $msg = 'Data pelatihan anda sudah ada !!';
+            $msg = 'Data pelatihan sudah ada !!';
             return redirect()->route('data-pelatihan')->with('errorUpdateAdminNotif', $msg);
         } else {
-            $msg = 'Data pelatihan anda sudah ada !!';
+            $msg = 'Data pelatihan sudah ada !!';
             return redirect()->route('data-pelatihan')->with('errorUpdateAdminNotif', $msg);
         }
     }
@@ -102,7 +102,7 @@ class AdminController extends Controller
         $findID = $this->db->find($id);
         $findID->delete();
         $this->db->reset();
-        $msg = ' Selamat anda berhasil menghapus data siswa !!';
+        $msg = ' Berhasil menghapus data siswa !!';
         return redirect()->route('data-pelatihan')->with('deleteAdminNotif', $msg);
     }
 }
