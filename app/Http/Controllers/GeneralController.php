@@ -20,18 +20,24 @@ class GeneralController extends Controller
 
     public function index()
     {
-        return view('index');
+        $LogUser = null;
+
+        if (Session::has('LogSession')) {
+            $LogUser = $this->db->where('id', Session::get('LogSession'))->first();
+        }
+
+        return view('index', compact('LogUser'));
     }
 
     public function home()
     {
+        $LogUser = null;
+
         if (Session::has('LogSession')) {
-            $LogUser = $this->db->where('id', '=', Session::get('LogSession'))->first();
-            $Data = [
-                'LogUser' => $LogUser
-            ];
-            return view('index', $Data);
+            $LogUser = $this->db->where('id', Session::get('LogSession'))->first();
         }
+
+        return view('index', compact('LogUser'));
     }
 
     public function infokegiatan()

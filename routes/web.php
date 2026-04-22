@@ -21,6 +21,7 @@ Auth::routes();
 
 // General Route : Menu
 Route::get('/', [GeneralController::class, 'index'])->name('index');
+Route::get('/home', [GeneralController::class, 'home'])->name('home');
 Route::get('/info-kegiatan', [GeneralController::class, 'infokegiatan'])->name('infokegiatan');
 Route::get('/registrasi', [GeneralController::class, 'register'])->name('registrasi');
 Route::get('/forgot-password', [GeneralController::class, 'forgetUser'])->name('forgetUser');
@@ -42,7 +43,6 @@ Route::get('/dashboard', [GeneralController::class, 'dashboardaccount'])->name('
 // Route Policies : All Access Rights
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [GeneralController::class, 'dashboardaccount'])->name('dashboardaccount');
-    Route::get('/home', [GeneralController::class, 'home'])->name('home');
 });
 
 // Route Policies : Admin Access Rights
